@@ -528,6 +528,55 @@ body:after{opacity:.09}
   .hero-grid,.reactor-wrap{transform:none!important}
 }
 
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STARK OS / FINAL DIRECTOR'S PASS
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root{--glow-px:40px;--ambient-opacity:.36}
+body{--scan-opacity:.09}
+body:before{opacity:.23;background-image:linear-gradient(#9dddeb0a 1px,transparent 1px),linear-gradient(90deg,#9dddeb0a 1px,transparent 1px),radial-gradient(circle at center,#e7b86609 1px,transparent 1.8px);background-size:38px 38px,38px 38px,11px 11px}
+body:after{opacity:var(--scan-opacity)}
+body.accent-cyber{--gold:#82d5ff;--amber:#c2edff;--cyan:#b5efff;--red:#ff5cb9}
+body.accent-stealth{--gold:#a9c2b5;--amber:#d4e5d7;--cyan:#c3ddd8;--red:#d6d7c8}
+body.stark-no-hud .hud,body.stark-no-hud .reactor-telemetry{opacity:0!important;pointer-events:none!important}
+body.stark-no-scanlines:after{display:none}
+body.stark-effects-off .ticker-track,body.stark-effects-off .reactor-orbit,body.stark-effects-off .arc-core,body.stark-effects-off .rings,body.stark-effects-off .helmet-eyes,body.stark-effects-off .ai-orbits,body.stark-effects-off .hud,body.stark-effects-off .graph-energized path,body.stark-effects-off .graph-center-ring,body.stark-effects-off .graph-pulse,body.stark-effects-off .fab-halo,body.stark-effects-off .boot-ring,body.stark-effects-off .boot-core{animation:none!important}
+body.stark-effects-off #particles{opacity:0!important}
+body.stark-effects-off .reactor-card.webgl-active .reactor-webgl{filter:none!important}
+#particles{opacity:var(--ambient-opacity,.36)}
+.reactor-card.webgl-active .reactor-webgl{filter:drop-shadow(0 0 var(--glow-px,40px) #7be7f31c)}
+.reactor-card.webgl-active{background:radial-gradient(ellipse at 50% 50%,#153a463b,transparent 63%)}
+.reactor-wrap:after{content:"MK-X / HEMANTH";position:absolute;right:-4%;top:5%;writing-mode:vertical-rl;z-index:0;color:#f1c8780b;font:900 clamp(3rem,7vw,7.8rem)/.8 "Barlow Condensed",sans-serif;letter-spacing:-.045em;pointer-events:none}
+.hero-console{border-color:#3a4243}.hero-console span:first-child{color:#8cb4b8}
+.lab-trigger{border-color:#66523a;color:#e5ca94;background:#12160f}.lab-trigger:hover{border-color:var(--cyan);color:var(--cyan);background:#102027}.lab-trigger span{color:var(--cyan);font-size:1rem}
+.lab-dialog{width:min(1030px,calc(100% - 26px));max-height:min(90vh,950px)}
+.lab-content{padding:clamp(19px,3.2vw,34px)}
+.lab-header{padding:4px 0 24px;border-bottom:1px solid #293640}.lab-header>span{color:var(--gold);font-size:.53rem}
+.lab-header h2{font:800 clamp(2.7rem,6vw,4.9rem)/.9 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:14px 0 8px}.lab-header h2 em{color:var(--gold);font-style:normal}.lab-header p{max-width:720px;color:#94a4b1;font-size:.77rem;line-height:1.85}
+.lab-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:24px;padding-top:23px}
+.lab-controls{display:flex;flex-direction:column;gap:13px}.lab-control-group{border:1px solid #2c3740;background:linear-gradient(145deg,#111820,#0b1016);padding:17px}
+.lab-group-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}.lab-group-heading span{color:#728996;font-size:.5rem;letter-spacing:.1em}.lab-group-heading b{color:var(--gold);font:600 .76rem "DM Mono",monospace}
+.lab-range{display:grid;gap:10px;color:#d7ddd9;font-size:.72rem}.lab-range input{width:100%;accent-color:var(--gold);cursor:pointer}.lab-scale{display:flex;justify-content:space-between;color:#5d717d;font:500 .44rem "DM Mono",monospace}.lab-control-group>p{color:#71828d;font-size:.66rem;line-height:1.7;margin:10px 0 0}
+.accent-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.accent-picker button{display:flex;flex-direction:column;align-items:flex-start;gap:9px;padding:11px;border:1px solid #303b44;background:#0b1117;color:#8a9aa6;font:500 .55rem "DM Mono",monospace;cursor:pointer}
+.accent-picker button.active,.accent-picker button:hover{border-color:#d6b777;background:#171710;color:#eee5d0}.swatch{width:100%;height:22px;display:block;border:1px solid #ffffff22}
+.swatch.stark{background:linear-gradient(90deg,#ef3b35 0 27%,#e7b866 27% 70%,#7be7f3 70%)}.swatch.cyber{background:linear-gradient(90deg,#ff5cb9 0 27%,#82d5ff 27% 70%,#b5efff 70%)}.swatch.stealth{background:linear-gradient(90deg,#d6d7c8 0 27%,#a9c2b5 27% 70%,#c3ddd8 70%)}
+.lab-switches{padding:0 17px}.lab-switch{position:relative;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid #26323b;cursor:pointer}.lab-switch:last-child{border-bottom:0}
+.lab-switch b{display:block;color:#d3dcd9;font-size:.69rem;font-weight:600}.lab-switch small{display:block;color:#6f818d;font-size:.6rem;margin-top:3px}.lab-switch input{position:absolute;right:0;width:38px;height:22px;opacity:0;cursor:pointer}
+.lab-switch>i{display:block;position:relative;flex:0 0 37px;height:21px;border:1px solid #35434c;background:#141b21;transition:background .2s,border-color .2s}.lab-switch>i:after{content:"";position:absolute;top:3px;left:3px;width:13px;height:13px;background:#74838b;transition:transform .2s,background .2s}
+.lab-switch input:checked+i{border-color:#927344;background:#302716}.lab-switch input:checked+i:after{background:var(--gold);transform:translateX(16px)}.lab-switch input:focus-visible+i{outline:2px solid var(--cyan);outline-offset:3px}
+.lab-actions{display:flex;flex-wrap:wrap;gap:9px;padding-top:5px}.lab-actions .btn{flex:1 1 auto}
+.lab-telemetry{border:1px solid #303b43;background:radial-gradient(ellipse at 50% 0,#16333b2d,transparent 40%),#0b1016;min-width:0;display:flex;flex-direction:column;padding:18px}
+.lab-telemetry-title{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#8ca0ab;font-size:.5rem;letter-spacing:.1em;padding-bottom:14px;border-bottom:1px solid #2b3640}.lab-telemetry-title b{display:flex;align-items:center;gap:7px;color:#7be7b3;font-weight:500;font-size:.46rem}
+.lab-telemetry-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-top:13px}.lab-telemetry-grid>div{min-width:0;background:#0a0f14;border:1px solid #26323b;padding:12px}
+.lab-telemetry-grid small{display:block;color:#627582;font:.45rem "DM Mono",monospace;letter-spacing:.07em}.lab-telemetry-grid b{display:block;color:#e6c58b;font:600 .8rem "DM Mono",monospace;margin-top:8px;overflow-wrap:anywhere}
+.lab-preview{position:relative;display:grid;place-items:center;flex:1;min-height:230px;overflow:hidden;border:1px solid #263740;margin-top:13px;background:radial-gradient(circle at center,#1a414938,transparent 60%),linear-gradient(#8ff4ff07 1px,transparent 1px),linear-gradient(90deg,#8ff4ff07 1px,transparent 1px);background-size:auto,20px 20px,20px 20px}
+.lab-preview:before,.lab-preview:after{content:"";position:absolute;inset:14%;border:1px solid #e7b86620;border-radius:50%}.lab-preview:after{inset:23%;border-style:dashed;border-color:#7be7f34b;animation:orbit 20s linear infinite}
+.lab-preview-orbit{position:absolute;inset:7%;border:1px dashed #7be7f31e;border-radius:50%;animation:orbit 38s linear infinite reverse}.lab-preview-core{position:relative;width:82px;height:82px;border-radius:50%;border:7px double var(--gold);background:radial-gradient(circle,#eaffff 0 5%,#7be7f3 8% 18%,#284e50 28%,#0b1219 56%);box-shadow:0 0 var(--glow-px,40px) #7be7f34b,inset 0 0 25px #7be7f333;animation:reactor-pulse 3.4s ease-in-out infinite}
+.lab-preview>span{position:absolute;left:12px;bottom:10px;color:#637b86;font-size:.42rem;letter-spacing:.08em}.lab-note{color:#586b75;font-size:.43rem;line-height:1.7;margin:15px 0}.lab-open-command{width:100%;min-height:40px}
+@media(max-width:760px){.lab-layout{grid-template-columns:1fr}.lab-preview{min-height:190px}.lab-dialog{max-height:92vh}.reactor-wrap:after{right:-1%;font-size:4rem}}
+@media(max-width:460px){.lab-content{padding:17px 13px}.lab-control-group{padding:13px}.lab-switches{padding:0 13px}.lab-telemetry{padding:13px}.accent-picker{gap:5px}.accent-picker button{padding:8px}.lab-actions .btn{font-size:.47rem}}
+@media(prefers-reduced-motion:reduce){.lab-preview-core,.lab-preview-orbit,.lab-preview:after{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -562,7 +611,7 @@ body:after{opacity:.09}
 <div class="eyebrow mono">Building what comes next <span class="red">/</span> 2026</div>
 <h1><span class="first">GENIUS.</span><span class="middle">BUILDER.</span><span class="last">ENGINEER.</span></h1>
 <p>I’m <strong>Hemanth Kumar</strong> — a computer science student building AI agents, backend systems, and full-stack products. I care about useful software, grounded AI workflows, and systems that hold up beyond a demo.</p>
-<div class="hero-actions"><a class="btn gold" href="#work">Explore my projects ↘</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Open engineering log ↗</a></div>
+<div class="hero-actions"><a class="btn gold" href="#work">Explore my projects ↘</a><button class="btn lab-trigger" type="button" id="openStarkLab">Configure Stark OS <span aria-hidden="true">✧</span></button><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Open engineering log ↗</a></div>
 <div class="mini-stats"><div class="stat"><b data-count="21">21</b><span>Public repositories</span></div><div class="stat"><b data-count="6">06</b><span>Featured builds</span></div><div class="stat"><b>AI+</b><span>Core direction</span></div></div>
 <div class="hero-console mono"><span><i class="console-led"></i> PERSONAL LAB / MK-X</span><span>LOCAL CLOCK <b id="heroClock">--:--:--</b></span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
 </div>
@@ -722,6 +771,31 @@ body:after{opacity:.09}
 </div></div></section>
 <section class="section" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker mono"><b>08</b> OPEN CHANNEL / CONTACT</div><h2>Let's build the <em>future.</em></h2><p>Open to AI engineering and software development opportunities where I can contribute to Python systems, AI-assisted workflows, reliable APIs, and useful products.</p><div class="social-row"><a class="social-chip" href="https://www.linkedin.com/in/v-hemanth-kumar-yadav/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="social-chip" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social-chip" href="https://leetcode.com/u/hemanthkumar1012/" target="_blank" rel="noreferrer">LeetCode ↗</a><a class="social-chip" href="mailto:hemanthkumaryadav13@gmail.com">Email ↗</a><a class="social-chip" href="tel:+917075979460">Phone ↗</a></div></div><div class="contact-actions"><a class="btn gold" href="mailto:hemanthkumaryadav13@gmail.com">Send a message ↗</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></div></section>
 </main>
+<dialog class="system-dialog lab-dialog" id="starkLabDialog" aria-labelledby="starkLabTitle">
+  <div class="dialog-top mono"><span><i class="live-dot"></i> STARK OS / SUIT CONFIGURATION</span><button type="button" class="dialog-close" data-close-dialog aria-label="Close Stark OS configurator">ESC ✕</button></div>
+  <div class="lab-content">
+    <header class="lab-header"><span class="mono">MARK X / PERSONAL INTERFACE CONSOLE</span><h2 id="starkLabTitle">Configure <em>the lab.</em></h2><p>Adjust this browser's visual experience. Renderer metrics are local browser values, not backend monitoring.</p></header>
+    <div class="lab-layout">
+      <div class="lab-controls">
+        <section class="lab-control-group"><div class="lab-group-heading"><span class="mono">01 / REACTOR OUTPUT</span><b id="glowValue">76%</b></div><label class="lab-range"><span>Glow intensity</span><input id="glowPower" type="range" min="0" max="100" value="76"><span class="lab-scale"><i>LOW</i><i>MAXIMUM</i></span></label><p>Adjusts light bloom, core emission, and the ambient particle layer.</p></section>
+        <section class="lab-control-group"><div class="lab-group-heading"><span class="mono">02 / MOTION ENGINE</span><b id="motionValue">70%</b></div><label class="lab-range"><span>Animation speed</span><input id="motionPower" type="range" min="0" max="100" value="70"><span class="lab-scale"><i>STILL</i><i>FLIGHT MODE</i></span></label><p>Controls scene rotation and interface motion. System reduced-motion preferences take priority.</p></section>
+        <section class="lab-control-group"><div class="lab-group-heading"><span class="mono">03 / VISUAL PROFILE</span><b id="accentValue">STARK</b></div><div class="accent-picker" role="group" aria-label="Choose accent palette"><button type="button" data-accent="stark" class="active" aria-pressed="true"><i class="swatch stark"></i><span>Stark</span></button><button type="button" data-accent="cyber" aria-pressed="false"><i class="swatch cyber"></i><span>Cyber</span></button><button type="button" data-accent="stealth" aria-pressed="false"><i class="swatch stealth"></i><span>Stealth</span></button></div></section>
+        <section class="lab-control-group lab-switches">
+          <label class="lab-switch"><span><b>HUD readouts</b><small>Floating diagnostics and reactor telemetry</small></span><input id="hudToggle" type="checkbox" checked><i></i></label>
+          <label class="lab-switch"><span><b>Scanline texture</b><small>Subtle cinematic screen texture</small></span><input id="scanToggle" type="checkbox" checked><i></i></label>
+          <label class="lab-switch"><span><b>Ambient effects</b><small>Particle layer, glow, and animated details</small></span><input id="effectsToggle" type="checkbox" checked><i></i></label>
+        </section>
+        <div class="lab-actions"><button class="btn gold" id="labFullscreen" type="button">Enter full screen ↗</button><button class="btn" id="labReset" type="button">Reset to factory ↺</button></div>
+      </div>
+      <aside class="lab-telemetry">
+        <div class="lab-telemetry-title mono"><span>RENDER TELEMETRY</span><b><i class="live-dot"></i> LOCAL</b></div>
+        <div class="lab-telemetry-grid"><div><small>RENDER ENGINE</small><b id="labRenderEngine">INITIALIZING</b></div><div><small>FRAME RATE</small><b id="labFps">— FPS</b></div><div><small>DRAW CALLS</small><b id="labDrawCalls">—</b></div><div><small>GEOMETRIES</small><b id="labGeometryCount">—</b></div></div>
+        <div class="lab-preview"><div class="lab-preview-orbit"></div><div class="lab-preview-core"></div><span class="mono">OUTPUT PREVIEW / LIVE CSS</span></div>
+        <p class="lab-note mono">LOCAL BROWSER METRICS ONLY. NO SERVER TELEMETRY IS ACCESSED.</p><button class="btn lab-open-command" id="labOpenCommands" type="button">Open J.A.R.V.I.S. console ⌘K</button>
+      </aside>
+    </div>
+  </div>
+</dialog>
 <dialog class="system-dialog command-dialog" id="commandDialog" aria-labelledby="commandTitle">
   <div class="dialog-top mono"><span><i class="live-dot"></i> J.A.R.V.I.S. / COMMAND INTERFACE</span><button type="button" class="dialog-close" data-close-dialog aria-label="Close command interface">ESC ✕</button></div>
   <div class="command-heading"><span class="mono">STARK SYSTEMS TERMINAL</span><h2 id="commandTitle">What are we <em>building?</em></h2><p>Choose a destination or run a local interface command.</p></div>
@@ -944,6 +1018,59 @@ if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEve
     },{rootMargin:'-35% 0px -55% 0px',threshold:0});
     railTargets.forEach(target=>railObserver.observe(target));
   }
+
+  // STARK OS configuration controls persist locally in this browser.
+  const starkLab=document.getElementById('starkLabDialog');
+  const labDefaults={glow:76,motion:70,hud:true,scanlines:true,effects:true,accent:'stark'};
+  let labState={...labDefaults};
+  try{const saved=JSON.parse(localStorage.getItem('stark-os-preferences')||'null');if(saved&&typeof saved==='object')labState={...labDefaults,...saved}}catch(_){}
+  const glowControl=document.getElementById('glowPower'),motionControl=document.getElementById('motionPower');
+  const hudControl=document.getElementById('hudToggle'),scanControl=document.getElementById('scanToggle'),effectsControl=document.getElementById('effectsToggle');
+  const cssRoot=document.documentElement;
+  function emitLabEvent(type,detail){try{window.dispatchEvent(new CustomEvent(type,{detail}))}catch(_){}}
+  function applyLabState(persist=true){
+    document.body.classList.toggle('stark-no-hud',!labState.hud);
+    document.body.classList.toggle('stark-no-scanlines',!labState.scanlines);
+    document.body.classList.toggle('stark-effects-off',!labState.effects);
+    document.body.classList.toggle('accent-cyber',labState.accent==='cyber');
+    document.body.classList.toggle('accent-stealth',labState.accent==='stealth');
+    const glow=Math.max(0,Math.min(100,Number(labState.glow)||0));
+    cssRoot.style.setProperty('--glow-px',(8+glow*.42)+'px');
+    cssRoot.style.setProperty('--ambient-opacity',String(glow/100*.48));
+    if(glowControl)glowControl.value=String(glow);if(motionControl)motionControl.value=String(labState.motion);
+    if(hudControl)hudControl.checked=!!labState.hud;if(scanControl)scanControl.checked=!!labState.scanlines;if(effectsControl)effectsControl.checked=!!labState.effects;
+    const gv=document.getElementById('glowValue');if(gv)gv.textContent=glow+'%';
+    const mv=document.getElementById('motionValue');if(mv)mv.textContent=labState.motion+'%';
+    const av=document.getElementById('accentValue');if(av)av.textContent=String(labState.accent).toUpperCase();
+    document.querySelectorAll('[data-accent]').forEach(btn=>{const active=btn.dataset.accent===labState.accent;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
+    emitLabEvent('stark:power',{glow,motion:Number(labState.motion)||0,effects:!!labState.effects});
+    if(persist){try{localStorage.setItem('stark-os-preferences',JSON.stringify(labState))}catch(_){}}
+  }
+  function openStarkLab(){if(commandDialog?.open)commandDialog.close();if(blueprintDialog?.open)blueprintDialog.close();if(starkLab&&!starkLab.open){starkLab.showModal();applyLabState(false)}}
+  document.getElementById('openStarkLab')?.addEventListener('click',openStarkLab);
+  document.getElementById('jarvisFab')?.addEventListener('contextmenu',event=>{event.preventDefault();openStarkLab()});
+  glowControl?.addEventListener('input',()=>{labState.glow=Number(glowControl.value);applyLabState()});
+  motionControl?.addEventListener('input',()=>{labState.motion=Number(motionControl.value);applyLabState()});
+  hudControl?.addEventListener('change',()=>{labState.hud=hudControl.checked;applyLabState()});
+  scanControl?.addEventListener('change',()=>{labState.scanlines=scanControl.checked;applyLabState()});
+  effectsControl?.addEventListener('change',()=>{labState.effects=effectsControl.checked;applyLabState()});
+  document.querySelectorAll('[data-accent]').forEach(btn=>btn.addEventListener('click',()=>{labState.accent=btn.dataset.accent;applyLabState()}));
+  document.getElementById('labReset')?.addEventListener('click',()=>{labState={...labDefaults};applyLabState();showToast('STARK OS / FACTORY VISUAL PROFILE RESTORED')});
+  document.getElementById('labFullscreen')?.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch(_){showToast('FULL SCREEN IS NOT AVAILABLE IN THIS BROWSER CONTEXT')}});
+  document.addEventListener('fullscreenchange',()=>{const b=document.getElementById('labFullscreen');if(b)b.textContent=document.fullscreenElement?'Exit full screen ↙':'Enter full screen ↗'});
+  document.getElementById('labOpenCommands')?.addEventListener('click',()=>{starkLab?.close();openCommandPalette()});
+  starkLab?.querySelectorAll('[data-close-dialog]').forEach(button=>button.addEventListener('click',()=>starkLab.close()));
+  starkLab?.addEventListener('click',event=>{if(event.target===starkLab)starkLab.close()});
+  document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.shiftKey&&event.key.toLowerCase()==='l'){event.preventDefault();openStarkLab()}});
+  if(typeof commands!=='undefined'&&!commands.some(c=>c.name==='Open Stark OS configurator'))commands.push({icon:'⚙',name:'Open Stark OS configurator',desc:'Tune glow, motion, HUD, and display profile',keywords:'settings configurator lab preferences theme glow motion',run:openStarkLab});
+  applyLabState(false);
+  window.addEventListener('stark:render-stats',event=>{
+    const d=event.detail||{};
+    const engine=document.getElementById('labRenderEngine');if(engine)engine.textContent=d.engine||'SVG FALLBACK';
+    const fps=document.getElementById('labFps');if(fps)fps.textContent=Number.isFinite(d.fps)?Math.round(d.fps)+' FPS':'— FPS';
+    const calls=document.getElementById('labDrawCalls');if(calls)calls.textContent=Number.isFinite(d.calls)?String(d.calls):'—';
+    const geometry=document.getElementById('labGeometryCount');if(geometry)geometry.textContent=Number.isFinite(d.geometries)?String(d.geometries):'—';
+  });
 })();
 </script>
 
