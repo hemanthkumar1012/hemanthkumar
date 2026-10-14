@@ -1084,7 +1084,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!canvas||!card||!wrap)return;
 
-  let renderer,scene,camera,root,coreGroup,armorGroup,aiGroup,stars,frameId=0,observer,disposed=false,frame=0;
+  let renderer,scene,camera,root,coreGroup,armorGroup,aiGroup,stars,frameId=0,observer,disposed=false,frame=0,targetGlow=76,motionScale=.7,effectsEnabled=true;
   const pointer={x:0,y:0,targetX:0,targetY:0};
   const modes=[...document.querySelectorAll('[data-reactor-mode]')];
 
@@ -1156,18 +1156,34 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
     const coreRing=addTorus(coreGroup,.54,.018,cyan,[.05,.04,0],96);coreRing.position.z=.62;
 
     // MODE 02 / Powered armor study: a custom extruded helmet, cheek plates, gold brow and lit visor.
-    const helmet=addShape(armorGroup,[[0,2.02],[.92,1.8],[1.43,1.32],[1.56,.5],[1.27,-.68],[.72,-1.62],[0,-2],[-.72,-1.62],[-1.27,-.68],[-1.56,.5],[-1.43,1.32],[-.92,1.8]],armorRed,.32,.09);
+    const helmetGroup=new THREE.Group();helmetGroup.position.y=.66;helmetGroup.scale.setScalar(.78);armorGroup.add(helmetGroup);
+    const helmet=addShape(helmetGroup,[[0,2.02],[.92,1.8],[1.43,1.32],[1.56,.5],[1.27,-.68],[.72,-1.62],[0,-2],[-.72,-1.62],[-1.27,-.68],[-1.56,.5],[-1.43,1.32],[-.92,1.8]],armorRed,.32,.09);
     helmet.position.z=-.12;
-    addShape(armorGroup,[[-1.04,1.48],[-.75,1.76],[0,1.91],[.75,1.76],[1.04,1.48],[.78,.94],[0,.78],[-.78,.94]],armorGold,.18,.045);
-    addShape(armorGroup,[[-1.43,.52],[-1.14,.15],[-.64,.31],[-.75,-.16],[-1.13,-.54],[-1.32,-.2]],armorGold,.19,.035);
-    addShape(armorGroup,[[1.43,.52],[1.14,.15],[.64,.31],[.75,-.16],[1.13,-.54],[1.32,-.2]],armorGold,.19,.035);
-    addShape(armorGroup,[[-.67,-.08],[-.35,-.35],[-.24,-1.25],[0,-1.65],[.24,-1.25],[.35,-.35],[.67,-.08],[.56,-.72],[.35,-1.42],[0,-1.73],[-.35,-1.42],[-.56,-.72]],armorGold,.23,.025);
-    addShape(armorGroup,[[-1.19,.33],[-.48,.4],[-.26,.18],[-.77,.01]],glass,.2,.018);
-    addShape(armorGroup,[[1.19,.33],[.48,.4],[.26,.18],[.77,.01]],glass,.2,.018);
+    addShape(helmetGroup,[[-1.04,1.48],[-.75,1.76],[0,1.91],[.75,1.76],[1.04,1.48],[.78,.94],[0,.78],[-.78,.94]],armorGold,.18,.045);
+    addShape(helmetGroup,[[-1.43,.52],[-1.14,.15],[-.64,.31],[-.75,-.16],[-1.13,-.54],[-1.32,-.2]],armorGold,.19,.035);
+    addShape(helmetGroup,[[1.43,.52],[1.14,.15],[.64,.31],[.75,-.16],[1.13,-.54],[1.32,-.2]],armorGold,.19,.035);
+    addShape(helmetGroup,[[-.67,-.08],[-.35,-.35],[-.24,-1.25],[0,-1.65],[.24,-1.25],[.35,-.35],[.67,-.08],[.56,-.72],[.35,-1.42],[0,-1.73],[-.35,-1.42],[-.56,-.72]],armorGold,.23,.025);
+    addShape(helmetGroup,[[-1.19,.33],[-.48,.4],[-.26,.18],[-.77,.01]],glass,.2,.018);
+    addShape(helmetGroup,[[1.19,.33],[.48,.4],[.26,.18],[.77,.01]],glass,.2,.018);
     const helmetRim=new THREE.LineSegments(new THREE.EdgesGeometry(helmet.geometry),new THREE.LineBasicMaterial({color:0xffd994,transparent:true,opacity:.62}));
-    helmetRim.position.copy(helmet.position);armorGroup.add(helmetRim);
-    addTorus(armorGroup,1.8,.018,metal,[0,0,0]).position.z=-.2;
-    armorGroup.scale.setScalar(.91);
+    helmetRim.position.copy(helmet.position);helmetGroup.add(helmetRim);
+    addTorus(helmetGroup,1.8,.018,metal,[0,0,0]).position.z=-.2;
+
+    // Original armor-bust geometry: shoulder plates, chest panel, rib segmentation, and a lit chest core.
+    addShape(armorGroup,[[-1.58,.05],[-1.94,-.33],[-1.72,-.82],[-1.44,-1.2],[-1.18,-1.92],[-.66,-2.35],[0,-2.48],[.66,-2.35],[1.18,-1.92],[1.44,-1.2],[1.72,-.82],[1.94,-.33],[1.58,.05],[.85,.22],[0,.1],[-.85,.22]],darkMetal,.28,.075).position.z=-.30;
+    addShape(armorGroup,[[-1.58,.02],[-1.94,-.31],[-1.7,-.72],[-1.28,-.8],[-.95,-.32],[-.62,-.1],[0,-.26],[.62,-.1],[.95,-.32],[1.28,-.8],[1.7,-.72],[1.94,-.31],[1.58,.02],[.8,.16],[0,.01],[-.8,.16]],armorRed,.21,.055).position.z=-.02;
+    addShape(armorGroup,[[-1.83,-.27],[-1.52,-.62],[-1.22,-.6],[-1.07,-.28],[-1.3,-.07],[-1.65,-.08]],armorGold,.15,.035).position.z=.12;
+    addShape(armorGroup,[[1.83,-.27],[1.52,-.62],[1.22,-.6],[1.07,-.28],[1.3,-.07],[1.65,-.08]],armorGold,.15,.035).position.z=.12;
+    addShape(armorGroup,[[-.88,-.47],[-.56,-.63],[-.4,-1.3],[-.7,-1.62],[-1.0,-1.37]],armorRed,.16,.035).position.z=.13;
+    addShape(armorGroup,[[.88,-.47],[.56,-.63],[.4,-1.3],[.7,-1.62],[1.0,-1.37]],armorRed,.16,.035).position.z=.13;
+    addShape(armorGroup,[[-.54,-1.47],[-.35,-1.68],[0,-1.58],[.35,-1.68],[.54,-1.47],[.4,-2.05],[0,-2.22],[-.4,-2.05]],armorGold,.18,.04).position.z=.15;
+    const chestCore=new THREE.Group();chestCore.position.set(0,-.69,.40);armorGroup.add(chestCore);
+    addTorus(chestCore,.36,.055,metal,[0,0,0],96);
+    addTorus(chestCore,.27,.025,cyan,[0,0,0],96);
+    const chestLight=new THREE.Mesh(new THREE.CircleGeometry(.22,48),new THREE.MeshBasicMaterial({color:0x8ff4ff,transparent:true,opacity:.85}));chestCore.add(chestLight);
+    const chestStar=addShape(chestCore,[[0,.17],[.07,.055],[.19,.04],[.095,-.045],[.125,-.17],[0,-.10],[-.125,-.17],[-.095,-.045],[-.19,.04],[-.07,.055]],glass,.045,.012);chestStar.position.z=.03;
+    for(let i=0;i<7;i++){const rib=addShape(armorGroup,[[-.45,-1.25-i*.12],[.45,-1.25-i*.12],[.38,-1.30-i*.12],[-.38,-1.30-i*.12]],i%2?darkMetal:bronze,.07,.01);rib.position.z=.05;}
+    armorGroup.scale.setScalar(.86);
 
     // MODE 03 / AI network: orbiting rings, constellation nodes, and a faceted central core.
     addTorus(aiGroup,1.8,.012,cyanLine,[.3,.15,0]);
@@ -1202,6 +1218,26 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
     const starsGeo=new THREE.BufferGeometry();starsGeo.setAttribute('position',new THREE.BufferAttribute(positions,3));
     stars=new THREE.Points(starsGeo,new THREE.PointsMaterial({color:0xd3c6a5,size:.022,transparent:true,opacity:.65,sizeAttenuation:true}));scene.add(stars);
 
+    let lastStatsAt=performance.now(),lastStatsFrame=0;
+    window.addEventListener('stark:power',event=>{
+      const d=event.detail||{};
+      targetGlow=Math.max(0,Math.min(100,Number(d.glow??targetGlow)));
+      motionScale=Math.max(0,Math.min(1,Number(d.motion??70)/100));
+      effectsEnabled=d.effects!==false;
+      goldLight.intensity=5+targetGlow*.11;cyanLight.intensity=5+targetGlow*.13;redLight.intensity=2+targetGlow*.045;
+      aura.material.opacity=.025+targetGlow/100*.16;
+      crystal.material.emissiveIntensity=.4+targetGlow/100*3.1;
+      stars.material.opacity=.14+targetGlow/100*.58;stars.material.size=.01+targetGlow/100*.025;
+      if(reduce)renderer.render(scene,camera);
+    });
+    function publishStats(){
+      const now=performance.now();
+      if(now-lastStatsAt>=1000){
+        const fps=(frame-lastStatsFrame)*1000/(now-lastStatsAt);
+        lastStatsAt=now;lastStatsFrame=frame;
+        window.dispatchEvent(new CustomEvent('stark:render-stats',{detail:{engine:'THREE / WEBGL',fps,calls:renderer.info.render.calls,geometries:renderer.info.memory.geometries}}));
+      }
+    }
     function applyMode(mode){
       coreGroup.visible=mode==='reactor';armorGroup.visible=mode==='armor';aiGroup.visible=mode==='ai';
       if(reduce)renderer.render(scene,camera);
@@ -1209,6 +1245,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
     applyMode(card.dataset.mode||'reactor');
     modes.forEach(button=>button.addEventListener('click',()=>{applyMode(button.dataset.reactorMode);root.rotation.z+=(Math.random()-.5)*.12}));
     card.classList.add('webgl-active');
+    window.dispatchEvent(new CustomEvent('stark:render-stats',{detail:{engine:'THREE / WEBGL',fps:0,calls:renderer.info.render.calls,geometries:renderer.info.memory.geometries}}));
 
     function resize(){
       if(disposed)return;
@@ -1232,21 +1269,23 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
     function animate(){
       if(disposed||document.hidden||reduce){frameId=0;if(!disposed)renderer.render(scene,camera);return}
       frameId=requestAnimationFrame(animate);frame++;
-      root.rotation.y+=(pointer.targetX-root.rotation.y)*.035;
-      root.rotation.x+=(pointer.targetY-root.rotation.x)*.035;
-      coreGroup.rotation.z+=.0015;coreGroup.rotation.x=.04+Math.sin(frame*.008)*.025;
-      armorGroup.rotation.y=Math.sin(frame*.006)*.04;
-      aiGroup.rotation.y+=.0021;aiGroup.rotation.x=Math.sin(frame*.004)*.08;
-      stars.rotation.y+=.00014;
-      goldLight.intensity=14+Math.sin(frame*.035)*3;
-      cyanLight.intensity=16+Math.cos(frame*.027)*4;
-      renderer.render(scene,camera);
+      if(effectsEnabled){
+        root.rotation.y+=(pointer.targetX-root.rotation.y)*.035*motionScale;
+        root.rotation.x+=(pointer.targetY-root.rotation.x)*.035*motionScale;
+        coreGroup.rotation.z+=.0015*motionScale;coreGroup.rotation.x=.04+Math.sin(frame*.008*motionScale)*.025;
+        armorGroup.rotation.y=Math.sin(frame*.006*motionScale)*.04;
+        aiGroup.rotation.y+=.0021*motionScale;aiGroup.rotation.x=Math.sin(frame*.004*motionScale)*.08;
+        stars.rotation.y+=.00014*motionScale;
+        goldLight.intensity=5+targetGlow*.11+Math.sin(frame*.035*motionScale)*Math.min(3,targetGlow*.03);
+        cyanLight.intensity=5+targetGlow*.13+Math.cos(frame*.027*motionScale)*Math.min(4,targetGlow*.04);
+      }
+      renderer.render(scene,camera);publishStats();
     }
     if(reduce)renderer.render(scene,camera);else animate();
     window.addEventListener('beforeunload',()=>{disposed=true;if(frameId)cancelAnimationFrame(frameId);observer?.disconnect();renderer.dispose()},{once:true});
   }catch(error){
     console.warn('3D enhancement unavailable; using inline SVG fallback.',error);
-    card.classList.remove('webgl-active');canvas.style.display='none';
+    card.classList.remove('webgl-active');canvas.style.display='none';window.dispatchEvent(new CustomEvent('stark:render-stats',{detail:{engine:'SVG FALLBACK',fps:0,calls:0,geometries:0}}));
   }
 })().catch(error=>console.warn('Three.js module unavailable; inline SVG fallback remains active.',error));
 </script>
