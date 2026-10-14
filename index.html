@@ -577,6 +577,12 @@ body.stark-effects-off .reactor-card.webgl-active .reactor-webgl{filter:none!imp
 @media(max-width:460px){.lab-content{padding:17px 13px}.lab-control-group{padding:13px}.lab-switches{padding:0 13px}.lab-telemetry{padding:13px}.accent-picker{gap:5px}.accent-picker button{padding:8px}.lab-actions .btn{font-size:.47rem}}
 @media(prefers-reduced-motion:reduce){.lab-preview-core,.lab-preview-orbit,.lab-preview:after{animation:none!important}}
 
+/* Final interaction polish */
+.project{transition:transform .22s ease,border-color .22s,box-shadow .22s;transform-style:preserve-3d}
+.project:hover{box-shadow:0 26px 80px #0009,0 0 0 1px #7be7f329;transform:translateY(-5px)}
+.graph-node .graph-node-symbol{transition:transform .25s,box-shadow .25s}
+.graph-node:hover .graph-node-symbol,.graph-node.active .graph-node-symbol{transform:rotate(-4deg) scale(1.06);box-shadow:0 0 20px #7be7f32b}
+@media(prefers-reduced-motion:reduce){.project,.graph-node .graph-node-symbol{transition:none!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -1071,6 +1077,13 @@ if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEve
     const calls=document.getElementById('labDrawCalls');if(calls)calls.textContent=Number.isFinite(d.calls)?String(d.calls):'—';
     const geometry=document.getElementById('labGeometryCount');if(geometry)geometry.textContent=Number.isFinite(d.geometries)?String(d.geometries):'—';
   });
+
+// Keyboard shortcut: slash opens the J.A.R.V.I.S. command palette.
+document.addEventListener('keydown',event=>{
+ const target=event.target;
+ if(target&&(target.isContentEditable||/INPUT|TEXTAREA|SELECT/.test(target.tagName)))return;
+ if(event.key==='/'&&!event.ctrlKey&&!event.metaKey&&!event.altKey){event.preventDefault();openCommandPalette()}
+});
 })();
 </script>
 
