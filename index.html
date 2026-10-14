@@ -1036,7 +1036,7 @@ if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEve
     document.body.classList.toggle('accent-stealth',labState.accent==='stealth');
     const glow=Math.max(0,Math.min(100,Number(labState.glow)||0));
     cssRoot.style.setProperty('--glow-px',(8+glow*.42)+'px');
-    cssRoot.style.setProperty('--ambient-opacity',String(glow/100*.48));
+    cssRoot.style.setProperty('--ambient-opacity',String(glow/100*.48));cssRoot.style.setProperty('--motion-power',String(Number(labState.motion)||0));
     if(glowControl)glowControl.value=String(glow);if(motionControl)motionControl.value=String(labState.motion);
     if(hudControl)hudControl.checked=!!labState.hud;if(scanControl)scanControl.checked=!!labState.scanlines;if(effectsControl)effectsControl.checked=!!labState.effects;
     const gv=document.getElementById('glowValue');if(gv)gv.textContent=glow+'%';
@@ -1230,6 +1230,15 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.m
       stars.material.opacity=.14+targetGlow/100*.58;stars.material.size=.01+targetGlow/100*.025;
       if(reduce)renderer.render(scene,camera);
     });
+    // The classic script runs before this module; hydrate saved settings after module initialization.
+    const hydratedGlow=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--glow-px'));
+    const hydratedMotion=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--motion-power'));
+    if(Number.isFinite(hydratedGlow))targetGlow=Math.max(0,Math.min(100,(hydratedGlow-8)/.42));
+    if(Number.isFinite(hydratedMotion))motionScale=Math.max(0,Math.min(1,hydratedMotion/100));
+    effectsEnabled=!document.body.classList.contains('stark-effects-off')&&!reduce;
+    goldLight.intensity=5+targetGlow*.11;cyanLight.intensity=5+targetGlow*.13;redLight.intensity=2+targetGlow*.045;
+    aura.material.opacity=.025+targetGlow/100*.16;crystal.material.emissiveIntensity=.4+targetGlow/100*3.1;
+    stars.material.opacity=.14+targetGlow/100*.58;stars.material.size=.01+targetGlow/100*.025;
     function publishStats(){
       const now=performance.now();
       if(now-lastStatsAt>=1000){
