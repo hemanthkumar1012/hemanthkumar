@@ -268,6 +268,77 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 @media(max-width:460px){.hero{padding-top:27px}.hero h1{font-size:clamp(4rem,15vw,5.6rem)}.reactor-wrap{padding-inline:4px}.reactor-modebar{gap:1px;padding:3px}.reactor-modebar button{font-size:.38rem;padding:6px}.reactor-telemetry{gap:4px;bottom:52px;font-size:.34rem}.reactor-bottom{font-size:.42rem}.hud.hud-a{top:1%;left:0}.hud.hud-b{right:0;bottom:-2%}.blueprint-stats{grid-template-columns:1fr 1fr}.blueprint-stats div:last-child{grid-column:1/-1}.blueprint-node{flex-basis:100%}.dialog-foot{font-size:.42rem}.command-item kbd{display:none}.boot-sigil{width:134px;height:134px}}
 @media(prefers-reduced-motion:reduce){.boot-screen{display:none!important}.boot-ring,.boot-core,.boot-meter i,.helmet-eyes,.ai-orbits,.hud,.reactor-orbit,.cursor-orb{animation:none!important}.reactor-card,.project,.cap-card,.process-card,.experience-card,.cert-card,.repo-card{transition:none!important;transform:none!important}}
 
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MK-X / CINEMATIC ENGINEERING INTERFACE 100
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.reactor-card{isolation:isolate;overflow:hidden}
+.reactor-webgl{position:absolute;inset:0;width:100%;height:100%;z-index:2;display:none;pointer-events:none}
+.reactor-card.webgl-active .reactor-webgl{display:block}
+.reactor-card.webgl-active .reactor-svg,.reactor-card.webgl-active .armor-svg,.reactor-card.webgl-active .ai-svg{display:none!important}
+.reactor-modebar{box-shadow:0 7px 22px #0008;backdrop-filter:blur(12px)}
+.mission-section{background:radial-gradient(ellipse at 50% 0,#21343b19,transparent 52%),#080b10}
+.mission-section .section-head{margin-bottom:37px}
+.mission-board{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);border:1px solid #35424a;background:#0a0f15;box-shadow:0 32px 90px #0008;min-width:0}
+.graph-panel{min-width:0;border-right:1px solid #2b3640;background:radial-gradient(ellipse at 50% 47%,#17303530,transparent 43%),linear-gradient(145deg,#0c1219,#080d12);overflow:hidden}
+.console-top{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:17px 20px;border-bottom:1px solid #28343e;color:#82929f;font-size:.5rem;letter-spacing:.12em}
+.console-top>span{display:flex;gap:8px;align-items:center}.console-top b{color:#80e7b0;font-weight:500}
+.graph-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 19px;border-bottom:1px solid #222e38;color:#6e8090;font-size:.5rem}
+.graph-toolbar [role=group]{display:flex;gap:4px;flex-wrap:wrap}
+.graph-filter{border:1px solid #2c3b46;background:#0b1118;padding:6px 8px;color:#718391;font:500 .48rem "DM Mono",monospace;cursor:pointer}
+.graph-filter.active,.graph-filter:hover{border-color:#b48b4d;color:#f1c878;background:#21190d}
+.graph-stage{height:560px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 50% 50%,#15232b78,transparent 35%),linear-gradient(#8ff4ff05 1px,transparent 1px),linear-gradient(90deg,#8ff4ff05 1px,transparent 1px);background-size:auto,26px 26px,26px 26px}
+.graph-stage:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:linear-gradient(transparent 49.8%,#e7b8660e 50%,transparent 50.2%),linear-gradient(90deg,transparent 49.8%,#7be7f30b 50%,transparent 50.2%)}
+.graph-wires{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+.graph-energized{filter:drop-shadow(0 0 4px #7be7f3)}.graph-energized path{animation:wire-flow 10s linear infinite}.graph-energized path.active{stroke-width:3;filter:drop-shadow(0 0 7px #7be7f3)}
+.graph-center-ring{position:absolute;left:50%;top:50%;border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);border:1px solid #e7b8661b}
+.graph-center-ring.ring-one{width:190px;height:190px;box-shadow:0 0 0 22px #e7b86604,0 0 0 44px #7be7f303;animation:mission-spin 42s linear infinite}
+.graph-center-ring.ring-two{width:230px;height:230px;border-style:dashed;border-color:#7be7f322;animation:mission-spin 65s linear infinite reverse}
+.graph-node{position:absolute;width:27%;min-height:104px;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding:12px 13px;text-align:left;background:linear-gradient(145deg,#151b22f5,#0b1016f8);border:1px solid #35414a;color:#f2efe7;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);cursor:pointer;transition:opacity .25s,filter .25s,border-color .25s,background .25s,transform .25s,box-shadow .25s}
+.graph-node:after{content:"";position:absolute;left:0;top:0;width:2px;height:100%;background:#e7b866;opacity:.55}
+.graph-node:hover,.graph-node.active{border-color:#e7b866;background:linear-gradient(145deg,#211d15,#0c1218);box-shadow:0 0 35px #e7b8660b;transform:translateY(-2px)}
+.graph-node.active:after{background:#7be7f3;opacity:1;box-shadow:0 0 14px #7be7f3}
+.graph-node.active .graph-node-symbol{color:#091116;background:var(--cyan);border-color:var(--cyan)}
+.graph-node .graph-node-symbol{display:grid;place-items:center;min-width:28px;height:25px;padding:0 5px;border:1px solid #625039;color:#e7b866;background:#1c1913;font:600 .52rem "DM Mono",monospace}
+.graph-node strong{font:600 .59rem "DM Mono",monospace;letter-spacing:.015em;line-height:1.35}
+.graph-node small{color:#6f8291;font:500 .44rem "DM Mono",monospace;letter-spacing:.08em;line-height:1.35}
+.graph-node i{position:absolute;right:8px;top:8px;color:#667783;font:normal .39rem "DM Mono",monospace}.graph-node.active i{color:#7be7f3}
+.node-core{left:50%;top:50%;transform:translate(-50%,-50%);width:31%;min-height:120px;align-items:center;text-align:center;gap:8px;border-color:#8c6e42;background:linear-gradient(145deg,#1c1b16,#0a1014)}
+.node-core:hover,.node-core.active{transform:translate(-50%,-52%)}.node-core:after{display:none}
+.node-core .graph-node-symbol{width:46px;height:46px;clip-path:polygon(20% 0,80% 0,100% 50%,80% 100%,20% 100%,0 50%);font:700 1rem "Barlow Condensed",sans-serif;color:#0a0c10;background:var(--gold);border:0}.node-core strong{font-size:.62rem}
+.node-retrieval{left:2%;top:7%}.node-product{right:2%;top:7%}.node-support{left:1%;top:41%}.node-evaluation{right:1%;top:41%}.node-crm{left:2%;bottom:5%}.node-school{right:2%;bottom:5%}
+.graph-pulse{position:absolute;z-index:1;left:50%;top:50%;width:160px;height:160px;border:1px solid #7be7f322;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+.graph-pulse.pulse-a{animation:pulse-ring 4s ease-out infinite}.graph-pulse.pulse-b{animation:pulse-ring 4s ease-out 2s infinite}
+.graph-stage[data-view="ai"] .graph-node:not(.node-core):not([data-domain~="ai"]),.graph-stage[data-view="product"] .graph-node:not(.node-core):not([data-domain~="product"]),.graph-stage[data-view="trust"] .graph-node:not(.node-core):not([data-domain~="trust"]){opacity:.16;filter:grayscale(1)}
+.graph-stage[data-view="ai"] .graph-energized path:not([data-wire="retrieval"]):not([data-wire="support"]),.graph-stage[data-view="product"] .graph-energized path:not([data-wire="product"]):not([data-wire="crm"]):not([data-wire="school"]),.graph-stage[data-view="trust"] .graph-energized path:not([data-wire="retrieval"]):not([data-wire="support"]):not([data-wire="evaluation"]):not([data-wire="school"]){opacity:.12}
+.graph-legend{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 19px;border-top:1px solid #28333c;color:#667984;font-size:.45rem;letter-spacing:.06em}
+.graph-legend span{display:flex;align-items:center;gap:7px}.legend-dot{width:6px;height:6px;border-radius:50%;display:inline-block}.legend-dot.gold{background:var(--gold);box-shadow:0 0 9px #e7b866}.legend-dot.cyan{background:var(--cyan);box-shadow:0 0 9px #7be7f3}
+.mission-console{display:flex;flex-direction:column;min-width:0;background:linear-gradient(150deg,#11171e,#090e14)}
+.mission-console-head{display:flex;justify-content:space-between;gap:9px;padding:17px 19px;border-bottom:1px solid #28333d;color:#738593;font-size:.49rem;letter-spacing:.08em}
+.mission-console-head>span{display:flex;align-items:center;gap:7px}.mission-console-head strong{color:var(--gold);font-weight:500}
+.mission-identity{display:flex;align-items:center;gap:13px;padding:23px 22px 7px}.mission-glyph{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border:1px solid #6f5938;background:#211a10;color:var(--gold);font:700 1rem "Barlow Condensed",sans-serif;clip-path:polygon(20% 0,80% 0,100% 50%,80% 100%,20% 100%,0 50%)}
+.mission-identity>div:last-child{min-width:0}.mission-identity .mono{color:#7be7f3;font-size:.46rem;letter-spacing:.1em}
+.mission-identity h3{font:700 clamp(1.7rem,2.7vw,2.4rem)/.9 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:6px 0 0}
+.mission-description{margin:13px 22px 20px;color:#95a4b1;font-size:.75rem;line-height:1.85}
+.mission-readouts{margin:0 22px;display:grid;grid-template-columns:1fr 1fr;gap:7px}.mission-readouts>div{padding:11px;border:1px solid #293640;background:#0b1118;min-width:0}
+.mission-readouts span{display:block;color:#637684;font-size:.43rem;letter-spacing:.1em}.mission-readouts b{display:block;color:#d7c394;margin-top:7px;font:500 .65rem "DM Mono",monospace;line-height:1.5;overflow-wrap:anywhere}
+.mission-health{margin:17px 22px 0;padding:14px;border:1px solid #2c3740;background:#0b1016}
+.health-heading,.health-foot{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#6f8190;font-size:.43rem;letter-spacing:.04em}.health-heading b{color:#85e9b2;font-weight:500}
+.health-track{height:3px;margin:12px 0 8px;background:#28343d;overflow:hidden}.health-track i{display:block;width:0;height:100%;background:linear-gradient(90deg,#e7b866,#7be7f3);transition:width .2s}.health-foot span:last-child{color:#aab8c2}
+.mission-activity{margin:16px 22px 0}.activity-head{display:flex;justify-content:space-between;gap:8px;color:#718391;border-bottom:1px solid #2a3540;padding-bottom:10px;font-size:.44rem;letter-spacing:.05em}.activity-head span:last-child{color:#566b79}
+.activity-list{display:grid;gap:0}.activity-list>div{display:grid;grid-template-columns:5px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #222d36;color:#91a0ab;font-size:.6rem}.activity-list i{width:4px;height:4px;background:#7be7f3;box-shadow:0 0 7px #7be7f3}.activity-list small{font:500 .41rem "DM Mono",monospace;color:#5c6e7c}
+.mission-actions{display:flex;flex-wrap:wrap;gap:7px;padding:18px 22px 0}.mission-actions .btn{font-size:.49rem;min-height:40px;padding:0 11px}.mission-disclaimer{color:#596b77;font-size:.4rem;line-height:1.65;letter-spacing:.05em;margin:14px 22px 20px}
+.jarvis-fab{position:fixed;right:21px;bottom:22px;z-index:320;width:66px;height:66px;border:1px solid #9d7e48;background:radial-gradient(circle at 50% 40%,#e9c87d26,#0a1016 70%);color:#f6d58f;display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 36px #0009,0 0 0 1px #e7b8660c;clip-path:polygon(20% 0,80% 0,100% 50%,80% 100%,20% 100%,0 50%);transition:transform .2s,border-color .2s,box-shadow .2s}
+.jarvis-fab:hover{transform:translateY(-4px) scale(1.04);border-color:#7be7f3;box-shadow:0 20px 45px #000b,0 0 24px #7be7f318}.jarvis-fab b{position:relative;z-index:1;font:800 1.75rem "Barlow Condensed",sans-serif}
+.jarvis-fab .fab-halo{position:absolute;inset:6px;border:1px solid #e7b86657;transform:rotate(30deg);animation:mission-spin 18s linear infinite}
+.jarvis-fab small{position:absolute;right:75px;white-space:nowrap;border:1px solid #3d4038;background:#0b1016;color:#c6b38a;padding:7px 9px;font:500 .46rem "DM Mono",monospace;letter-spacing:.1em;opacity:0;transform:translateX(6px);transition:opacity .2s,transform .2s}
+.jarvis-fab:hover small{opacity:1;transform:translateX(0)}
+@keyframes mission-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}@keyframes pulse-ring{0%{transform:translate(-50%,-50%) scale(.65);opacity:.6}100%{transform:translate(-50%,-50%) scale(1.5);opacity:0}}@keyframes wire-flow{to{stroke-dashoffset:-150}}
+@media(max-width:1100px){.mission-board{grid-template-columns:minmax(0,1fr)}.graph-panel{border-right:0;border-bottom:1px solid #2b3640}.graph-stage{height:540px}}
+@media(max-width:760px){.graph-stage{height:540px}.graph-node{width:29%;padding:9px 8px;min-height:96px}.graph-node strong{font-size:.5rem}.graph-node small{font-size:.39rem}.graph-node i{font-size:.34rem;right:5px;top:5px}.node-core{width:34%;min-height:110px}.node-core .graph-node-symbol{width:39px;height:39px}.graph-center-ring.ring-one{width:140px;height:140px}.graph-center-ring.ring-two{width:175px;height:175px}.console-top{padding:14px 13px}.graph-toolbar{padding:10px 13px}.graph-legend{padding:11px 13px;font-size:.41rem}.mission-console-head{padding:15px}.mission-identity{padding:19px 17px 5px}.mission-description{margin:13px 17px 17px}.mission-readouts{margin:0 17px}.mission-health{margin:15px 17px 0}.mission-activity{margin:15px 17px 0}.mission-actions{padding:16px 17px 0}.mission-disclaimer{margin:13px 17px 18px}.jarvis-fab{width:56px;height:56px;right:13px;bottom:13px}}
+@media(max-width:500px){.graph-toolbar{align-items:flex-start;flex-direction:column}.graph-stage{height:auto;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;background-size:auto,20px 20px,20px 20px}.graph-stage .graph-wires{opacity:.2}.graph-stage .graph-center-ring,.graph-stage .graph-pulse{display:none}.graph-node{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none!important;width:auto;min-height:99px;clip-path:none;padding:10px;gap:5px}.graph-node:hover,.graph-node.active{transform:translateY(-2px)!important}.graph-node.node-core{grid-column:1/-1;min-height:94px;display:grid;grid-template-columns:46px 1fr;grid-template-rows:1fr 1fr;column-gap:13px;text-align:left;align-items:center;justify-items:start}.graph-node.node-core .graph-node-symbol{grid-row:1/3;width:43px;height:43px}.graph-node.node-core strong,.graph-node.node-core small,.graph-node.node-core i{position:static}.graph-node.node-core i{grid-column:2}.graph-node strong{font-size:.52rem}.graph-node small{font-size:.4rem}.graph-node i{font-size:.35rem}.graph-node .graph-node-symbol{height:23px}.mission-identity h3{font-size:2rem}.mission-actions .btn{flex:1 1 auto}.jarvis-fab small{display:none}}
+@media(prefers-reduced-motion:reduce){.graph-energized path,.graph-center-ring,.graph-pulse,.jarvis-fab .fab-halo{animation:none!important}.graph-node,.jarvis-fab{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -279,9 +350,10 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
   <button class="boot-skip mono" id="skipBoot">SKIP INTRO ↗</button>
 </div>
 <div class="cursor-orb" id="cursorOrb" aria-hidden="true"><i></i><b></b></div>
+<button class="jarvis-fab" id="jarvisFab" type="button" aria-label="Open J.A.R.V.I.S. command console"><span class="fab-halo"></span><b>J</b><small>J.A.R.V.I.S.</small></button>
 <div class="nav-shell"><nav class="nav wrap" aria-label="Main navigation">
 <a class="brand" href="#home"><span class="brand-mark">HK</span><span>HEMANTH KUMAR<small>STARK SYSTEMS / AI & SOFTWARE</small></span></a>
-<div class="nav-links" id="navLinks"><a href="#work">Projects</a><a href="#capabilities">Capabilities</a><a href="#process">Approach</a><a href="#experience">Experience</a><a href="#journey">Journey</a><a href="#certifications">Certifications</a></div>
+<div class="nav-links" id="navLinks"><a href="#work">Projects</a><a href="#mission-control">Systems</a><a href="#capabilities">Capabilities</a><a href="#process">Approach</a><a href="#experience">Experience</a><a href="#journey">Journey</a><a href="#certifications">Certifications</a></div>
 <div class="nav-right"><span class="live"><i></i> Systems online</span><button class="btn command-trigger" id="commandTrigger" type="button" aria-haspopup="dialog"><span>⌘</span> J.A.R.V.I.S. <kbd>CTRL K</kbd></button><a class="btn gold contact-shortcut" href="#contact">Initialize contact ↗</a><button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button></div>
 </nav></div>
 <main id="home">
@@ -301,6 +373,7 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 <div class="hud hud-b"><small>AI SUBSYSTEM</small><b>ONLINE</b><small>TOOLS / RAG / EVAL</small></div>
 <div class="reactor-card">
 <div class="reactor-top mono"><strong>STARK INDUSTRIES / R&D</strong><span>MK—I // CORE ASSEMBLY</span></div>
+<canvas class="reactor-webgl" id="reactor3d" aria-hidden="true"></canvas>
 <div class="reactor-modebar" role="group" aria-label="Reactor display mode">
   <button type="button" data-reactor-mode="reactor" class="active" aria-pressed="true">01 / CORE</button>
   <button type="button" data-reactor-mode="armor" aria-pressed="false">02 / ARMOR</button>
@@ -375,8 +448,43 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 </div>
 <details class="archive reveal"><summary><div><strong>Engineering archive / all repositories</strong><p class="muted" style="margin:5px 0 0;font-size:.77rem">Explore the broader trail of experiments, platforms, and practice repositories.</p></div><span>21 REPOS · OPEN ARCHIVE +</span></summary><div class="repo-grid">
 <article class="repo-card"><h4>Hemanth Kumar — Profile README</h4><p>Personal profile and overview</p><a href="https://github.com/hemanthkumar1012/hemanthkumar1012" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Cricket Tournament Management System</h4><p>Tournament workflow project</p><a href="https://github.com/hemanthkumar1012/Cricket-Tournament-Management-System-" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Portfolio Website</h4><p>Personal portfolio source</p><a href="https://github.com/hemanthkumar1012/Hemanth-kumar-portfolio" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot AI Support Agent</h4><p>Evidence-first support agent</p><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ApplyRight</h4><p>AI recruitment platform</p><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LeetCode Solutions</h4><p>Algorithm practice archive</p><a href="https://github.com/hemanthkumar1012/leetcode-solutions" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot</h4><p>Logistics workflows</p><a href="https://github.com/hemanthkumar1012/ParcelPilot" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Aegis</h4><p>Runtime security control plane</p><a href="https://github.com/hemanthkumar1012/aegis" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Platform</h4><p>Logistics product platform</p><a href="https://github.com/hemanthkumar1012/parcelpilot-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLD Practice Lab</h4><p>Low-level design exercises</p><a href="https://github.com/hemanthkumar1012/lld-practice-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CodeAlpha Tasks</h4><p>Internship project collection</p><a href="https://github.com/hemanthkumar1012/codealpha_tasks" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>AgentGuard</h4><p>Runtime security for AI agents</p><a href="https://github.com/hemanthkumar1012/agentguard" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLM Evaluation Lab</h4><p>LLM testing and release evaluation</p><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Hiver SDE Intern</h4><p>Support dataset / agent task</p><a href="https://github.com/hemanthkumar1012/parcelpilot-hiver-sde-intern" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CRM System</h4><p>Customer-support CRM</p><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Company Intranet Portal</h4><p>Internal company workflow portal</p><a href="https://github.com/hemanthkumar1012/company-intranet-portal" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Verity Enterprise Agent</h4><p>Multimodal research and action agent</p><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Invexom Cybersecurity Assessment</h4><p>Cybersecurity awareness assessment</p><a href="https://github.com/hemanthkumar1012/invexom-cybersecurity-awareness-assessment" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>SevaSetu Bharat Agentic</h4><p>Citizen action agent concept</p><a href="https://github.com/hemanthkumar1012/sevasetu-bharat-agentic-2026" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Kinder Garden Schools OS</h4><p>School information platform</p><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>finch-cactus-plum-kite</h4><p>Repository in profile archive</p><a href="https://github.com/hemanthkumar1012/finch-cactus-plum-kite" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
+
 </div></details>
 </div></section>
+<section class="section mission-section" id="mission-control">
+<div class="wrap">
+  <div class="section-head reveal"><div><div class="kicker mono"><b>09</b> MISSION CONTROL / LIVE SYSTEM MAP</div><h2>Not just a portfolio.<br><span>A working interface.</span></h2></div><p class="section-intro">Select a subsystem to inspect the architecture and the project that demonstrates it. This is an interactive portfolio visualization, not a live backend monitor.</p></div>
+  <div class="mission-board reveal">
+    <div class="graph-panel">
+      <div class="console-top mono"><span><i class="live-dot"></i> GRAPH_ENGINE / NODE MAP</span><span>LOCAL VISUALIZATION <b>● ONLINE</b></span></div>
+      <div class="graph-toolbar mono"><span>VIEW LAYER</span><div role="group" aria-label="Filter system graph"><button class="graph-filter active" data-graph-view="all" aria-pressed="true">ALL</button><button class="graph-filter" data-graph-view="ai" aria-pressed="false">AI</button><button class="graph-filter" data-graph-view="product" aria-pressed="false">PRODUCT</button><button class="graph-filter" data-graph-view="trust" aria-pressed="false">TRUST</button></div></div>
+      <div class="graph-stage" id="systemGraph" data-view="all">
+        <svg class="graph-wires" viewBox="0 0 760 570" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wireGradient"><stop stop-color="#e7b866" stop-opacity=".15"/><stop offset=".5" stop-color="#7be7f3" stop-opacity=".9"/><stop offset="1" stop-color="#e7b866" stop-opacity=".15"/></linearGradient></defs><g fill="none" stroke="#314451" stroke-width="1.2"><path d="M380 285 130 76M380 285 630 76M380 285 112 285M380 285 648 285M380 285 130 490M380 285 630 490"/><path d="M130 76 112 285 130 490M630 76 648 285 630 490" stroke-dasharray="3 8" opacity=".55"/><circle cx="380" cy="285" r="198" stroke-dasharray="2 9" opacity=".6"/><circle cx="380" cy="285" r="240" stroke-dasharray="1 12" opacity=".4"/></g><g class="graph-energized" fill="none" stroke="url(#wireGradient)" stroke-width="2.1" stroke-dasharray="6 9"><path data-wire="retrieval" d="M380 285 130 76"/><path data-wire="product" d="M380 285 630 76"/><path data-wire="support" d="M380 285 112 285"/><path data-wire="evaluation" d="M380 285 648 285"/><path data-wire="crm" d="M380 285 130 490"/><path data-wire="school" d="M380 285 630 490"/></g></svg>
+        <div class="graph-center-ring ring-one"></div><div class="graph-center-ring ring-two"></div>
+        <button class="graph-node node-core active" data-system="core" data-domain="core ai product trust" aria-pressed="true" type="button"><span class="graph-node-symbol">HK</span><strong>STARK / CORE</strong><small>ORCHESTRATION HUB</small><i>SYS / 000</i></button>
+        <button class="graph-node node-retrieval" data-system="retrieval" data-domain="ai trust" aria-pressed="false" type="button"><span class="graph-node-symbol">RAG</span><strong>RETRIEVAL</strong><small>VERITY</small><i>SYS / 001</i></button>
+        <button class="graph-node node-product" data-system="product" data-domain="product ai" aria-pressed="false" type="button"><span class="graph-node-symbol">AI+</span><strong>CAREER AI</strong><small>APPLYRIGHT</small><i>SYS / 002</i></button>
+        <button class="graph-node node-support" data-system="support" data-domain="trust ai" aria-pressed="false" type="button"><span class="graph-node-symbol">OPS</span><strong>SUPPORT AGENT</strong><small>PARCELPILOT</small><i>SYS / 003</i></button>
+        <button class="graph-node node-evaluation" data-system="evaluation" data-domain="trust ai" aria-pressed="false" type="button"><span class="graph-node-symbol">EVAL</span><strong>QUALITY GATES</strong><small>SIGNAL LAB</small><i>SYS / 004</i></button>
+        <button class="graph-node node-crm" data-system="crm" data-domain="product" aria-pressed="false" type="button"><span class="graph-node-symbol">CRM</span><strong>OPERATIONS</strong><small>TICKETS / WORKFLOW</small><i>SYS / 005</i></button>
+        <button class="graph-node node-school" data-system="school" data-domain="product trust" aria-pressed="false" type="button"><span class="graph-node-symbol">K/OS</span><strong>EDUCATION</strong><small>KINDER GARDEN OS</small><i>SYS / 006</i></button>
+        <div class="graph-pulse pulse-a"></div><div class="graph-pulse pulse-b"></div>
+      </div>
+      <div class="graph-legend mono"><span><i class="legend-dot gold"></i> PROJECT NODE</span><span><i class="legend-dot cyan"></i> ACTIVE ROUTE</span><span>CLICK A NODE TO INSPECT</span></div>
+    </div>
+    <aside class="mission-console">
+      <div class="mission-console-head mono"><span><i class="live-dot"></i> ACTIVE SUBSYSTEM</span><strong id="missionSystemId">SYS / 000</strong></div>
+      <div class="mission-identity"><div class="mission-glyph" id="missionGlyph">HK</div><div><span class="mono" id="missionCategory">CONTROL PLANE</span><h3 id="missionTitle">Stark orchestration hub</h3></div></div>
+      <p class="mission-description" id="missionDescription">The shared portfolio map links research, products, operations, and evaluation patterns. Choose a node to inspect a workflow.</p>
+      <div class="mission-readouts"><div><span class="mono">ENGINEERING FOCUS</span><b id="missionFocus">System orchestration</b></div><div><span class="mono">LINKED PROJECT</span><b id="missionProject">Portfolio / System map</b></div></div>
+      <div class="mission-health"><div class="health-heading mono"><span>LOCAL DIAGNOSTIC / SIMULATED</span><b id="diagnosticLabel">READY</b></div><div class="health-track"><i id="diagnosticProgress"></i></div><div class="health-foot mono"><span id="diagnosticMessage">Waiting for manual diagnostics</span><span id="diagnosticPercent">00%</span></div></div>
+      <div class="mission-activity"><div class="activity-head mono"><span>EVENT STREAM</span><span>SIMULATED / LOCAL</span></div><div class="activity-list" id="activityLog"><div><i></i><span>Subsystem graph initialized</span><small>NOW</small></div><div><i></i><span>Portfolio data source ready</span><small>NOW</small></div><div><i></i><span>Interactive blueprint registry loaded</span><small>NOW</small></div></div></div>
+      <div class="mission-actions"><button class="btn gold" type="button" id="missionInspect">Inspect project blueprint ↗</button><button class="btn" type="button" id="runDiagnostics">Run diagnostics ⌁</button></div>
+      <p class="mission-disclaimer mono">DISPLAY VALUES ARE LOCAL SIMULATIONS — NO SERVER TELEMETRY IS CLAIMED.</p>
+    </aside>
+  </div>
+</div>
+</section>
 <div class="ticker"><div class="ticker-track" aria-hidden="true"><div class="ticker-item"><span>Understand the problem</span><i>✦</i><span>Build the smallest useful system</span><i>✦</i><span>Test assumptions</span><i>✦</i><span>Ship and improve</span><i>✦</i></div><div class="ticker-item"><span>Understand the problem</span><i>✦</i><span>Build the smallest useful system</span><i>✦</i><span>Test assumptions</span><i>✦</i><span>Ship and improve</span><i>✦</i></div></div></div>
 <section class="section" id="capabilities"><div class="wrap cap-grid">
 <div class="cap-intro reveal"><div class="kicker mono"><b>02</b> CAPABILITIES / TOOLKIT</div><h2>Engineer the <span>details.</span></h2><p>I enjoy the space where software meets real user needs: defining the problem, building a useful path through it, and making the system understandable and maintainable.</p><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Browse code on GitHub ↗</a><div class="skill-cloud"><span>Python</span><span>SQL</span><span>JavaScript</span><span>FastAPI</span><span>REST APIs</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>MongoDB</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Git</span><span>Linux</span><span>LLM workflows</span><span>RAG</span><span>Evaluation</span><span>System design</span></div></div>
@@ -580,6 +688,46 @@ if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEve
     document.querySelectorAll('a,button,.project,.cap-card,.experience-card').forEach(el=>{el.addEventListener('pointerenter',()=>cursorOrb.classList.add('hot'));el.addEventListener('pointerleave',()=>cursorOrb.classList.remove('hot'))});
     document.querySelectorAll('.project').forEach(card=>card.addEventListener('pointermove',event=>{const r=card.getBoundingClientRect();card.style.setProperty('--px',((event.clientX-r.left)/r.width*100).toFixed(1)+'%');card.style.setProperty('--py',((event.clientY-r.top)/r.height*100).toFixed(1)+'%')}));
   }
+
+  const systemGraph=document.getElementById('systemGraph');
+  const systemNodes=[...document.querySelectorAll('.graph-node')];
+  const systemDefs={
+    core:{id:'SYS / 000',glyph:'HK',category:'CONTROL PLANE',title:'Stark orchestration hub',description:'The shared system map links research, products, operations, and evaluation patterns. Select a subsystem to inspect its engineering story.',focus:'System orchestration',project:'Portfolio / System map',blueprint:null,wire:null},
+    retrieval:{id:'SYS / 001',glyph:'RAG',category:'RESEARCH / RETRIEVAL',title:'Evidence retrieval layer',description:'Verity explores multimodal intake and hybrid retrieval, with source attribution to keep responses tied to evidence.',focus:'Hybrid retrieval + provenance',project:'Verity',blueprint:0,wire:'retrieval'},
+    product:{id:'SYS / 002',glyph:'AI+',category:'CAREER PRODUCT',title:'Candidate intelligence',description:'ApplyRight connects candidate and recruiter workflows with AI-assisted resume insight, skills-gap analysis, and job matching.',focus:'Product workflow + AI assistance',project:'ApplyRight',blueprint:1,wire:'product'},
+    support:{id:'SYS / 003',glyph:'OPS',category:'CONTROLLED AGENTS',title:'Evidence-first support',description:'ParcelPilot prioritizes authoritative operational context and account-scoped retrieval, with explicit confirmation before state-changing actions.',focus:'Source hierarchy + action boundaries',project:'ParcelPilot AI Agent',blueprint:2,wire:'support'},
+    evaluation:{id:'SYS / 004',glyph:'EVAL',category:'RELIABILITY / QUALITY',title:'LLM evaluation gates',description:'Signal Lab organizes datasets, scorecards, regression checks, and review paths to make LLM workflow changes measurable.',focus:'Regression + human review',project:'LLM Evaluation Lab',blueprint:3,wire:'evaluation'},
+    crm:{id:'SYS / 005',glyph:'CRM',category:'OPERATIONS SOFTWARE',title:'Ticket operations',description:'A compact support CRM models ticket creation, state changes, and data-backed CRUD flows across a React/Vite UI and Express API.',focus:'Workflow state + persistence',project:'CRM System',blueprint:4,wire:'crm'},
+    school:{id:'SYS / 006',glyph:'K/OS',category:'FULL-STACK PRODUCT',title:'School information system',description:'Kinder Garden Schools OS organizes parent-facing information and admission workflows with Next.js and a MongoDB-backed API.',focus:'Full-stack data flow',project:'Kinder Garden Schools OS',blueprint:5,wire:'school'}
+  };
+  let selectedSystem='core';
+  const nodeFields={id:document.getElementById('missionSystemId'),glyph:document.getElementById('missionGlyph'),category:document.getElementById('missionCategory'),title:document.getElementById('missionTitle'),description:document.getElementById('missionDescription'),focus:document.getElementById('missionFocus'),project:document.getElementById('missionProject')};
+  const activityLog=document.getElementById('activityLog'),activityItems=[];
+  function pushActivity(message,time='NOW'){if(!activityLog)return;activityItems.unshift({message,time});activityItems.splice(5);activityLog.innerHTML=activityItems.map(item=>'<div><i></i><span>'+item.message+'</span><small>'+item.time+'</small></div>').join('')}
+  function selectSystem(id){
+    const d=systemDefs[id];if(!d)return;selectedSystem=id;
+    systemNodes.forEach(node=>{const active=node.dataset.system===id;node.classList.toggle('active',active);node.setAttribute('aria-pressed',String(active))});
+    document.querySelectorAll('[data-wire]').forEach(path=>path.classList.toggle('active',path.dataset.wire===d.wire));
+    Object.keys(nodeFields).forEach(key=>{if(nodeFields[key])nodeFields[key].textContent=d[key]??'—'});
+    const inspect=document.getElementById('missionInspect');
+    if(inspect){inspect.disabled=d.blueprint===null;inspect.textContent=d.blueprint===null?'Select a project node first':'Inspect '+d.project+' ↗';inspect.style.opacity=d.blueprint===null?'.55':'1'}
+    pushActivity('Node selected / '+d.id+' / '+d.project,'NOW');
+  }
+  systemNodes.forEach(node=>node.addEventListener('click',()=>selectSystem(node.dataset.system)));
+  document.querySelectorAll('[data-graph-view]').forEach(btn=>btn.addEventListener('click',()=>{const view=btn.dataset.graphView;systemGraph.dataset.view=view;document.querySelectorAll('[data-graph-view]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});pushActivity('Graph layer switched / '+view.toUpperCase(),'NOW')}));
+  selectSystem('core');
+  const simEvents=['Local interface / reactor subsystem ready','Project registry / six featured builds indexed','Blueprint renderer / awaiting selection','Canvas layer / performance-aware configuration','Repository archive / 21 entries loaded','Reduced-motion preference / respected'];
+  let eventIndex=0;setInterval(()=>{if(document.hidden)return;pushActivity(simEvents[eventIndex%simEvents.length],'SIM');eventIndex++},5200);
+  document.getElementById('missionInspect')?.addEventListener('click',()=>{const d=systemDefs[selectedSystem];if(d?.blueprint!==null&&d?.blueprint!==undefined)openBlueprint(d.blueprint);else showToast('SELECT A PROJECT NODE TO INSPECT ITS BLUEPRINT')});
+  const diagnosticButton=document.getElementById('runDiagnostics');let diagnosticTimer=null;
+  diagnosticButton?.addEventListener('click',()=>{
+    if(diagnosticTimer)clearInterval(diagnosticTimer);
+    const progress=document.getElementById('diagnosticProgress'),label=document.getElementById('diagnosticLabel'),message=document.getElementById('diagnosticMessage'),percent=document.getElementById('diagnosticPercent');
+    const checks=['Checking interface graph','Verifying project registry','Checking reduced-motion path','Checking navigation controls','Local diagnostic complete'];
+    let step=0;diagnosticButton.disabled=true;diagnosticButton.textContent='Scanning…';if(label)label.textContent='RUNNING';if(progress)progress.style.width='0%';if(message)message.textContent=checks[0];if(percent)percent.textContent='00%';pushActivity('Local diagnostic started / simulated','NOW');
+    diagnosticTimer=setInterval(()=>{step++;const pct=Math.min(100,step*20);if(progress)progress.style.width=pct+'%';if(percent)percent.textContent=String(pct).padStart(2,'0')+'%';if(message)message.textContent=checks[Math.min(step,checks.length-1)];if(step>=5){clearInterval(diagnosticTimer);diagnosticTimer=null;diagnosticButton.disabled=false;diagnosticButton.textContent='Run diagnostics ⌁';if(label)label.textContent='READY';pushActivity('Local UI checks completed / no backend queried','DONE');showToast('LOCAL UI DIAGNOSTIC COMPLETE / DISPLAY ONLY')}},330);
+  });
+  document.getElementById('jarvisFab')?.addEventListener('click',openCommandPalette);
 })();
 </script>
 </body>
