@@ -339,10 +339,208 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 @media(max-width:500px){.graph-toolbar{align-items:flex-start;flex-direction:column}.graph-stage{height:auto;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px;background-size:auto,20px 20px,20px 20px}.graph-stage .graph-wires{opacity:.2}.graph-stage .graph-center-ring,.graph-stage .graph-pulse{display:none}.graph-node{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none!important;width:auto;min-height:99px;clip-path:none;padding:10px;gap:5px}.graph-node:hover,.graph-node.active{transform:translateY(-2px)!important}.graph-node.node-core{grid-column:1/-1;min-height:94px;display:grid;grid-template-columns:46px 1fr;grid-template-rows:1fr 1fr;column-gap:13px;text-align:left;align-items:center;justify-items:start}.graph-node.node-core .graph-node-symbol{grid-row:1/3;width:43px;height:43px}.graph-node.node-core strong,.graph-node.node-core small,.graph-node.node-core i{position:static}.graph-node.node-core i{grid-column:2}.graph-node strong{font-size:.52rem}.graph-node small{font-size:.4rem}.graph-node i{font-size:.35rem}.graph-node .graph-node-symbol{height:23px}.mission-identity h3{font-size:2rem}.mission-actions .btn{flex:1 1 auto}.jarvis-fab small{display:none}}
 @media(prefers-reduced-motion:reduce){.graph-energized path,.graph-center-ring,.graph-pulse,.jarvis-fab .fab-halo{animation:none!important}.graph-node,.jarvis-fab{transition:none!important}}
 
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MK-X // CINEMATIC COMPOSITION PASS
+   This pass changes the composition and reading order, not only effects.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+html{scroll-padding-top:86px}
+body{background:#05070a}
+body:before{opacity:.23;background-size:38px 38px}
+body:after{opacity:.09}
+.nav-shell{background:#06090de8;border-bottom-color:#31302b}
+.nav{width:min(1500px,calc(100% - 60px))}
+.hero{
+  width:min(1500px,calc(100% - 60px));
+  min-height:calc(100svh - 78px);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:23px 0 24px;
+  position:relative;isolation:isolate;
+}
+.hero:before{
+  content:"";position:absolute;inset:0 -12vw;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 70% 48%,#17343b35,transparent 34%),
+    radial-gradient(ellipse at 80% 55%,#69411c1b,transparent 43%),
+    linear-gradient(110deg,transparent 35%,#e7b86605 65%,transparent);
+}
+.hero:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,#e7b86658 18%,#7be7f34b 70%,transparent);
+}
+.topline{font-size:.58rem;border-color:#39372e;padding-bottom:13px}
+.hero-grid{
+  flex:1;grid-template-columns:minmax(380px,.83fr) minmax(540px,1.17fr);
+  gap:16px;min-height:min(780px,calc(100svh - 170px));padding:17px 0 0;
+}
+.hero-copy{position:relative;z-index:5;padding:18px 0 22px}
+.hero-copy:after{
+  content:"";position:absolute;left:-2px;top:0;bottom:0;width:1px;
+  background:linear-gradient(180deg,transparent,#e7b8668c 20%,#7be7f34d 70%,transparent);
+}
+.hero-copy .eyebrow,.hero-copy h1,.hero-copy>p,.hero-copy .hero-actions,.hero-copy .mini-stats,.hero-console{margin-left:24px}
+.hero-copy .eyebrow{margin-top:15px}
+.hero h1{font-size:clamp(5.3rem,8.1vw,9.6rem);line-height:.73;letter-spacing:-.028em;margin-top:0;margin-bottom:29px}
+.hero h1 .first{text-shadow:1px 2px 0 #77736a,0 0 40px #ffffff08}
+.hero h1 .middle{transform:translateX(14px);text-shadow:2px 3px 0 #603b1b,0 0 46px #e7b86619}
+.hero h1 .last{transform:translateX(3px);text-shadow:2px 3px 0 #5b1514,0 0 40px #ff514916}
+.hero-copy>p{font-size:.9rem;max-width:470px;line-height:1.9}
+.hero-actions{margin-top:24px}
+.mini-stats{max-width:520px;margin-top:31px;background:linear-gradient(90deg,#1118208c,transparent);border-color:#3d3a30}
+.stat{padding-right:18px;margin-right:19px;min-width:0}
+.stat b{font-size:2.15rem}
+.hero-console{display:flex;flex-wrap:wrap;gap:13px 19px;margin-top:21px;padding-top:12px;border-top:1px solid #2d3538;color:#5f7882;font-size:.43rem;letter-spacing:.08em}
+.hero-console span{display:flex;align-items:center;gap:7px}
+.hero-console b{color:#9eb3b4;font-weight:500}
+.console-led{width:5px;height:5px;background:#8be5ae;border-radius:50%;box-shadow:0 0 10px #8be5ae;display:inline-block}
+.reactor-wrap{
+  width:100%;min-height:min(76vh,830px);align-self:stretch;overflow:visible;
+  transform-style:preserve-3d;perspective:1400px;
+}
+.reactor-orbit{width:min(63vw,860px);max-width:110%;border-color:#e7b8663d;box-shadow:0 0 80px #e7b86607}
+.reactor-orbit:before{border-color:#7be7f33b;inset:7%}
+.reactor-orbit:after{border-color:#e7b86633;inset:17%;box-shadow:0 0 0 33px #7be7f303,0 0 0 72px #7be7f302}
+.reactor-card{
+  width:min(112%,780px);aspect-ratio:1.08;overflow:visible;clip-path:none;border:0;
+  background:radial-gradient(ellipse at 50% 54%,#1a3b4438,transparent 43%);
+  box-shadow:none;transform:rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg));
+}
+.reactor-card:before{content:none}
+.reactor-card:after{inset:0;background:radial-gradient(360px circle at var(--light-x,50%) var(--light-y,45%),#7be7f30a,transparent 70%);pointer-events:none}
+.reactor-card.webgl-active .reactor-webgl{filter:drop-shadow(0 0 45px #7be7f31c)}
+.reactor-svg,.armor-svg,.ai-svg{width:103%;height:103%;filter:drop-shadow(0 0 40px #7be7f323)}
+.reactor-top{left:2%;right:2%;top:4%;z-index:10;color:#728b91;font-size:.52rem}
+.reactor-top strong{color:#e7c58b}
+.reactor-modebar{top:11%;border-color:#4c493d;background:#060b10c9}
+.reactor-modebar button{padding:8px 12px}
+.reactor-telemetry{bottom:7%;left:2%;right:2%;border-color:#3a4948;color:#6d9296;z-index:10}
+.reactor-bottom{bottom:1%;left:2%;right:2%;color:#728a93;z-index:10}
+.reactor-bottom b{color:#d4d6ce}
+.hud{z-index:12;border-color:#625238;background:#080d13e8;box-shadow:0 18px 60px #0009,0 0 32px #e7b86606}
+.hud small{font-size:.45rem;color:#7a9299}
+.hud b{font-size:1.25rem}
+.hud-a{left:-1%;top:22%}
+.hud-b{right:-1%;bottom:24%}
+.hud-c{left:0;bottom:16%;animation:hud-float 6.5s ease-in-out -1.8s infinite}
+.hud-d{right:1%;top:17%;animation:hud-float 7.4s ease-in-out -3s infinite}
+.hud-c b{color:var(--gold)}.hud-d b{color:var(--red)}
+.hud .tiny{font-size:.63rem;letter-spacing:.08em}
+.section-rail{
+  position:fixed;left:14px;top:50%;transform:translateY(-50%);z-index:95;
+  display:flex;flex-direction:column;gap:5px;padding:10px 7px;
+  border:1px solid #353a37;background:#070b10cc;backdrop-filter:blur(14px);
+}
+.rail-caption{writing-mode:vertical-rl;transform:rotate(180deg);color:#536c75;font-size:.4rem;letter-spacing:.13em;margin:0 auto 7px}
+.section-rail a{display:grid;grid-template-columns:24px 0fr;align-items:center;gap:0;min-height:30px;overflow:hidden;color:#657984;transition:color .2s,grid-template-columns .2s,gap .2s}
+.section-rail a i{font:500 .48rem "DM Mono",monospace;font-style:normal;text-align:center}
+.section-rail a b{font:500 .44rem "DM Mono",monospace;white-space:nowrap;opacity:0;transition:opacity .2s}
+.section-rail a:hover,.section-rail a.active{color:var(--gold);grid-template-columns:24px 54px;gap:6px}
+.section-rail a:hover b,.section-rail a.active b{opacity:1}
+.section-rail a.active i{color:var(--cyan)}
+/* Mission Control now follows the home screen, so the signature interaction is immediately discoverable. */
+.mission-section{padding-top:88px;background:radial-gradient(ellipse at 50% 0,#1c444b23,transparent 54%),#080b10}
+.mission-board{grid-template-columns:minmax(0,1.35fr) minmax(325px,.65fr)}
+.graph-stage{height:600px}
+.graph-panel{background:radial-gradient(ellipse at 50% 46%,#1c3b443a,transparent 42%),linear-gradient(145deg,#0b131a,#070b10)}
+.graph-node{background:linear-gradient(145deg,#18222aef,#080e13fa)}
+.graph-node:hover,.graph-node.active{box-shadow:0 0 44px #7be7f30c}
+.section{padding-top:104px;padding-bottom:104px}
+#work{background:linear-gradient(180deg,#080b10,#07090c)}
+.project-grid{gap:19px}
+.project{background:linear-gradient(145deg,#111a22,#090d13);border-color:#2e3c45}
+.project-art{height:270px;background:radial-gradient(ellipse at 50% 42%,#38301c,#111a20 57%,#080d12)}
+.project-art .diagram{border-color:#706045;background:linear-gradient(145deg,#121d24ee,#090d12f5)}
+.project-body{padding:29px}
+.project h3{font-size:clamp(2.2rem,3.2vw,3.3rem)}
+@media(max-width:1250px){
+  .hero-grid{grid-template-columns:minmax(350px,.85fr) minmax(460px,1.15fr);gap:0}
+  .hero h1{font-size:clamp(5.2rem,8.1vw,8.6rem)}
+  .reactor-wrap{min-height:660px}
+  .hud-c{left:-1%}.hud-d{right:-1%}
+}
+@media(max-width:1050px){
+  .nav{width:calc(100% - 42px)}
+  .hero{width:calc(100% - 42px);min-height:auto}
+  .hero-grid{grid-template-columns:1fr 1fr;min-height:630px}
+  .hero h1{font-size:clamp(4.6rem,8.3vw,7.6rem)}
+  .hero-copy .eyebrow,.hero-copy h1,.hero-copy>p,.hero-copy .hero-actions,.hero-copy .mini-stats,.hero-console{margin-left:15px}
+  .reactor-wrap{min-height:560px}
+  .reactor-card{width:112%}
+  .hud{padding:10px 11px}
+  .hud-d{top:12%}.hud-b{bottom:20%}
+  .mission-board{grid-template-columns:1fr}
+  .graph-stage{height:560px}
+  .mission-console{border-top:1px solid #2b3640}
+  .section-rail{left:5px}
+}
+@media(max-width:760px){
+  .section-rail{display:none}
+  .hero{width:calc(100% - 28px);padding:25px 0 34px;min-height:0}
+  .hero-grid{display:flex;flex-direction:column;gap:5px;min-height:0;padding-top:28px}
+  .hero-copy{width:100%;padding:6px 0 8px}
+  .hero-copy:after{left:0}
+  .hero-copy .eyebrow,.hero-copy h1,.hero-copy>p,.hero-copy .hero-actions,.hero-copy .mini-stats,.hero-console{margin-left:14px}
+  .hero h1{font-size:clamp(4.6rem,15vw,7.5rem)}
+  .hero-copy>p{max-width:620px}
+  .mini-stats{margin-top:25px}
+  .hero-console{font-size:.4rem;gap:9px 13px}
+  .reactor-wrap{width:100%;min-height:0;padding:16px 0 22px;overflow:visible}
+  .reactor-orbit{width:96vw}
+  .reactor-card{width:100%;aspect-ratio:1/1}
+  .reactor-svg,.armor-svg,.ai-svg{width:99%;height:99%}
+  .reactor-top{top:4%}
+  .reactor-modebar{top:10%}
+  .reactor-telemetry{bottom:7%;font-size:.35rem}
+  .reactor-bottom{bottom:0}
+  .hud-a{left:-4px;top:18%}.hud-d{right:-4px;top:14%}
+  .hud-b{right:-4px;bottom:21%}.hud-c{left:-4px;bottom:13%}
+  .hud{padding:8px 9px}.hud small{font-size:.38rem}.hud b{font-size:.98rem}
+  .mission-section{padding-top:74px}
+  .graph-stage{height:540px}
+  .mission-board{display:block}
+  .graph-panel{border-right:0;border-bottom:1px solid #2b3640}
+  .section{padding-top:78px;padding-bottom:78px}
+}
+@media(max-width:500px){
+  .topline{font-size:.47rem;gap:8px}.hero h1{font-size:clamp(3.8rem,14.5vw,5.7rem)}
+  .hero-copy .eyebrow,.hero-copy h1,.hero-copy>p,.hero-copy .hero-actions,.hero-copy .mini-stats,.hero-console{margin-left:10px}
+  .hero-actions .btn{font-size:.53rem;padding:0 12px}
+  .stat{margin-right:12px;padding-right:12px}.stat b{font-size:1.65rem}.stat span{font-size:.43rem}
+  .hero-console{font-size:.35rem}
+  .reactor-card{aspect-ratio:1/1.03}
+  .reactor-modebar button{font-size:.36rem;padding:5px 6px}
+  .reactor-top span{font-size:.4rem}
+  .reactor-telemetry{font-size:.31rem;gap:4px}
+  .reactor-bottom{font-size:.37rem}
+  .hud{padding:7px 8px}.hud small{font-size:.34rem}.hud b{font-size:.85rem}
+  .graph-stage{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:12px}
+  .graph-stage .graph-wires,.graph-stage .graph-center-ring,.graph-stage .graph-pulse{display:none}
+  .graph-node{position:relative;left:auto;right:auto;top:auto;bottom:auto;transform:none!important;width:auto;min-height:99px;clip-path:none;padding:10px}
+  .graph-node:hover,.graph-node.active{transform:translateY(-2px)!important}
+  .graph-node.node-core{grid-column:1/-1;min-height:94px;display:grid;grid-template-columns:46px 1fr;grid-template-rows:1fr 1fr;column-gap:13px;text-align:left;align-items:center;justify-items:start}
+  .graph-node.node-core .graph-node-symbol{grid-row:1/3;width:43px;height:43px}
+  .graph-node.node-core strong,.graph-node.node-core small,.graph-node.node-core i{position:static}
+  .graph-node.node-core i{grid-column:2}
+  .graph-node strong{font-size:.52rem}.graph-node small{font-size:.4rem}.graph-node i{font-size:.35rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .section-rail a,.reactor-card,.graph-node{transition:none!important}
+  .hero-grid,.reactor-wrap{transform:none!important}
+}
+
 </style>
 </head>
 <body>
 <div id="progress"></div>
+<nav class="section-rail" id="sectionRail" aria-label="Section navigator">
+  <span class="rail-caption mono">SYSTEM / INDEX</span>
+  <a href="#home" class="active" aria-label="Hero"><i>00</i><b>CORE</b></a>
+  <a href="#mission-control" aria-label="Mission control"><i>01</i><b>MAP</b></a>
+  <a href="#work" aria-label="Projects"><i>02</i><b>BUILDS</b></a>
+  <a href="#capabilities" aria-label="Capabilities"><i>03</i><b>STACK</b></a>
+  <a href="#experience" aria-label="Experience"><i>04</i><b>FIELD</b></a>
+  <a href="#contact" aria-label="Contact"><i>05</i><b>CONTACT</b></a>
+</nav>
 <canvas id="particles" aria-hidden="true"></canvas>
 <div class="boot-screen" id="bootScreen" aria-label="Stark Systems boot sequence">
   <div class="boot-sigil"><span class="boot-ring ring-a"></span><span class="boot-ring ring-b"></span><span class="boot-ring ring-c"></span><span class="boot-core"></span><b>HK</b></div>
@@ -366,11 +564,14 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 <p>I’m <strong>Hemanth Kumar</strong> — a computer science student building AI agents, backend systems, and full-stack products. I care about useful software, grounded AI workflows, and systems that hold up beyond a demo.</p>
 <div class="hero-actions"><a class="btn gold" href="#work">Explore my projects ↘</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Open engineering log ↗</a></div>
 <div class="mini-stats"><div class="stat"><b data-count="21">21</b><span>Public repositories</span></div><div class="stat"><b data-count="6">06</b><span>Featured builds</span></div><div class="stat"><b>AI+</b><span>Core direction</span></div></div>
+<div class="hero-console mono"><span><i class="console-led"></i> PERSONAL LAB / MK-X</span><span>LOCAL CLOCK <b id="heroClock">--:--:--</b></span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
 </div>
 <div class="reactor-wrap reveal" id="reactor">
 <div class="reactor-orbit"><i class="orbit-node one"></i><i class="orbit-node two"></i></div>
 <div class="hud hud-a"><small>ARC CORE // OUTPUT</small><b>98.7 <span class="tiny">%</span></b><small>SIMULATED DISPLAY</small></div>
-<div class="hud hud-b"><small>AI SUBSYSTEM</small><b>ONLINE</b><small>TOOLS / RAG / EVAL</small></div>
+<div class="hud hud-b"><small>AI SUBSYSTEM</small><b>READY FOR INPUT</b><small>TOOLS / RAG / EVAL</small></div>
+<div class="hud hud-c"><small>ENGINEERING ARCHIVE</small><b>21 <span class="tiny">REPOS</span></b><small>PUBLIC PROJECT TRAIL</small></div>
+<div class="hud hud-d"><small>PRIMARY DOMAIN</small><b>APPLIED AI</b><small>RESEARCH / BUILD / SHIP</small></div>
 <div class="reactor-card">
 <div class="reactor-top mono"><strong>STARK INDUSTRIES / R&D</strong><span>MK—I // CORE ASSEMBLY</span></div>
 <canvas class="reactor-webgl" id="reactor3d" aria-hidden="true"></canvas>
@@ -434,26 +635,9 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
 </div>
 </div>
 </section>
-<div class="ticker"><div class="ticker-track" aria-hidden="true"><div class="ticker-item"><span>Applied AI</span><i>✦</i><span>Agentic Workflows</span><i>✦</i><span>Backend Engineering</span><i>✦</i><span>Runtime Security</span><i>✦</i><span>LLM Evaluation</span><i>✦</i><span>Product Thinking</span><i>✦</i></div><div class="ticker-item"><span>Applied AI</span><i>✦</i><span>Agentic Workflows</span><i>✦</i><span>Backend Engineering</span><i>✦</i><span>Runtime Security</span><i>✦</i><span>LLM Evaluation</span><i>✦</i><span>Product Thinking</span><i>✦</i></div></div></div>
-<section class="section" id="work"><div class="wrap">
-<div class="section-head reveal"><div><div class="kicker mono"><b>01</b> PROJECTS / SELECTED BUILDS</div><h2>Proof of <span>build.</span></h2></div><p class="section-intro">A lab of AI products, development tools, and full-stack systems. Each build explores a practical problem with a focus on workflow, reliability, and usable outcomes.</p></div>
-<div class="project-tools reveal"><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All builds · 06</button><button class="filter" data-filter="ai" aria-pressed="false">AI / GenAI</button><button class="filter" data-filter="web" aria-pressed="false">Product apps</button><button class="filter" data-filter="tools" aria-pressed="false">Engineering tools</button></div><span class="count" id="count">06 RECORDS</span></div>
-<div class="project-grid" id="projectGrid">
-<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 001"><div class="diagram"><div class="mock-top"><span>VERITY // RESEARCH</span><span>MULTIMODAL</span></div><div class="mock-core">V/AI</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Applied AI / Agent platform</span><span>001—006</span></div><h3>Verity</h3><p>Enterprise-oriented multimodal research and action agent focused on retrieval, tool orchestration, and controlled execution.</p><ul class="project-points"><li>Hybrid retrieval patterns and multimodal ingestion for documents, tables, and images.</li><li>MCP-oriented tool integration, guarded SQL access, and approval gates for sensitive actions.</li><li>Citation/provenance-first responses with evaluation and regression-test foundations.</li></ul><div class="tags"><span>RAG</span><span>AI Agents</span><span>MCP</span><span>Evaluation</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="0" aria-label="Inspect engineering blueprint for project 1"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-<article class="project reveal" data-category="ai web"><div class="project-art" data-code="PROJECT / 002"><div class="diagram"><div class="mock-top"><span>APPLYRIGHT</span><span>CAREER AI</span></div><div class="mock-core">AR</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Recruitment / AI product</span><span>002—006</span></div><h3>ApplyRight</h3><p>A recruitment and career platform supporting candidate and recruiter workflows with AI-assisted analysis.</p><ul class="project-points"><li>Candidate profiles, job listings, applications, and recruiter-side applicant views.</li><li>Gemini-backed resume insight, skill-gap analysis, job matching, and interview preparation.</li><li>FastAPI API layer with role-based access and JWT-oriented authentication.</li></ul><div class="tags"><span>React</span><span>FastAPI</span><span>Gemini</span><span>JWT</span></div><div class="project-links"><a href="https://applyright-puce.vercel.app/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="1" aria-label="Inspect engineering blueprint for project 2"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 003"><div class="diagram"><div class="mock-top"><span>PARCELPILOT</span><span>SUPPORT AGENT</span></div><div class="mock-core">PP</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Agent workflow / Support</span><span>003—006</span></div><h3>ParcelPilot AI Agent</h3><p>Evidence-first support assistant for order, parcel, and customer-policy questions.</p><ul class="project-points"><li>Retrieves account/order records and relevant operational policy documents.</li><li>Prioritizes authoritative sources and keeps account-scoped context separate.</li><li>Uses explicit confirmation gates for actions that may change system state.</li></ul><div class="tags"><span>Python</span><span>LLM tools</span><span>Retrieval</span></div><div class="project-links"><a href="https://parcelpilot-ai-agent.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="2" aria-label="Inspect engineering blueprint for project 3"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-<article class="project reveal" data-category="ai tools"><div class="project-art" data-code="PROJECT / 004"><div class="diagram"><div class="mock-top"><span>SIGNAL LAB</span><span>MODEL QUALITY</span></div><div class="mock-core">EVAL</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">AI reliability / Tooling</span><span>004—006</span></div><h3>LLM Evaluation Lab</h3><p>An evaluation workspace for testing LLM applications with measurable quality gates.</p><ul class="project-points"><li>Workflow and dataset versioning with structured evaluation cases.</li><li>Scorecards and regression checks for groundedness, tool output, and injection resistance.</li><li>Human review for uncertain cases with latency and estimated-cost tracking.</li></ul><div class="tags"><span>LLMs</span><span>Regression tests</span><span>Release gates</span></div><div class="project-links"><a href="https://llmevallab-klar2hzi.manus.space/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="3" aria-label="Inspect engineering blueprint for project 4"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 005"><div class="diagram"><div class="mock-top"><span>SUPPORT CRM</span><span>OPERATIONS</span></div><div class="mock-core">CRM</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Business software</span><span>005—006</span></div><h3>CRM System</h3><p>A lightweight support CRM built around a practical ticket-management workflow.</p><ul class="project-points"><li>Ticket creation, status tracking, assignment, and operational CRUD flows.</li><li>React/Vite frontend backed by Express and SQLite.</li><li>Deployment-oriented setup and a simple interface for support operations.</li></ul><div class="tags"><span>React</span><span>Express</span><span>SQLite</span></div><div class="project-links"><a href="https://crm-system-nkaj.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="4" aria-label="Inspect engineering blueprint for project 5"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 006"><div class="diagram"><div class="mock-top"><span>KINDER OS</span><span>SCHOOL PLATFORM</span></div><div class="mock-core">K/OS</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Education / Full stack</span><span>006—006</span></div><h3>Kinder Garden Schools OS</h3><p>A school-facing platform designed to organize admissions and parent-oriented information.</p><ul class="project-points"><li>Admissions, galleries, fees, webinars, and school information sections.</li><li>Next.js frontend with Express API and MongoDB persistence.</li><li>JWT and password hashing foundations for protected workflows.</li></ul><div class="tags"><span>Next.js</span><span>Express</span><span>MongoDB</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="5" aria-label="Inspect engineering blueprint for project 6"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
-</div>
-<details class="archive reveal"><summary><div><strong>Engineering archive / all repositories</strong><p class="muted" style="margin:5px 0 0;font-size:.77rem">Explore the broader trail of experiments, platforms, and practice repositories.</p></div><span>21 REPOS · OPEN ARCHIVE +</span></summary><div class="repo-grid">
-<article class="repo-card"><h4>Hemanth Kumar — Profile README</h4><p>Personal profile and overview</p><a href="https://github.com/hemanthkumar1012/hemanthkumar1012" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Cricket Tournament Management System</h4><p>Tournament workflow project</p><a href="https://github.com/hemanthkumar1012/Cricket-Tournament-Management-System-" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Portfolio Website</h4><p>Personal portfolio source</p><a href="https://github.com/hemanthkumar1012/Hemanth-kumar-portfolio" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot AI Support Agent</h4><p>Evidence-first support agent</p><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ApplyRight</h4><p>AI recruitment platform</p><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LeetCode Solutions</h4><p>Algorithm practice archive</p><a href="https://github.com/hemanthkumar1012/leetcode-solutions" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot</h4><p>Logistics workflows</p><a href="https://github.com/hemanthkumar1012/ParcelPilot" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Aegis</h4><p>Runtime security control plane</p><a href="https://github.com/hemanthkumar1012/aegis" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Platform</h4><p>Logistics product platform</p><a href="https://github.com/hemanthkumar1012/parcelpilot-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLD Practice Lab</h4><p>Low-level design exercises</p><a href="https://github.com/hemanthkumar1012/lld-practice-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CodeAlpha Tasks</h4><p>Internship project collection</p><a href="https://github.com/hemanthkumar1012/codealpha_tasks" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>AgentGuard</h4><p>Runtime security for AI agents</p><a href="https://github.com/hemanthkumar1012/agentguard" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLM Evaluation Lab</h4><p>LLM testing and release evaluation</p><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Hiver SDE Intern</h4><p>Support dataset / agent task</p><a href="https://github.com/hemanthkumar1012/parcelpilot-hiver-sde-intern" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CRM System</h4><p>Customer-support CRM</p><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Company Intranet Portal</h4><p>Internal company workflow portal</p><a href="https://github.com/hemanthkumar1012/company-intranet-portal" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Verity Enterprise Agent</h4><p>Multimodal research and action agent</p><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Invexom Cybersecurity Assessment</h4><p>Cybersecurity awareness assessment</p><a href="https://github.com/hemanthkumar1012/invexom-cybersecurity-awareness-assessment" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>SevaSetu Bharat Agentic</h4><p>Citizen action agent concept</p><a href="https://github.com/hemanthkumar1012/sevasetu-bharat-agentic-2026" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Kinder Garden Schools OS</h4><p>School information platform</p><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>finch-cactus-plum-kite</h4><p>Repository in profile archive</p><a href="https://github.com/hemanthkumar1012/finch-cactus-plum-kite" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
-
-</div></details>
-</div></section>
 <section class="section mission-section" id="mission-control">
 <div class="wrap">
-  <div class="section-head reveal"><div><div class="kicker mono"><b>09</b> MISSION CONTROL / LIVE SYSTEM MAP</div><h2>Not just a portfolio.<br><span>A working interface.</span></h2></div><p class="section-intro">Select a subsystem to inspect the architecture and the project that demonstrates it. This is an interactive portfolio visualization, not a live backend monitor.</p></div>
+  <div class="section-head reveal"><div><div class="kicker mono"><b>02</b> MISSION CONTROL / LIVE SYSTEM MAP</div><h2>Not just a portfolio.<br><span>A working interface.</span></h2></div><p class="section-intro">Select a subsystem to inspect the architecture and the project that demonstrates it. This is an interactive portfolio visualization, not a live backend monitor.</p></div>
   <div class="mission-board reveal">
     <div class="graph-panel">
       <div class="console-top mono"><span><i class="live-dot"></i> GRAPH_ENGINE / NODE MAP</span><span>LOCAL VISUALIZATION <b>● ONLINE</b></span></div>
@@ -485,40 +669,58 @@ body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
   </div>
 </div>
 </section>
+
+<div class="ticker"><div class="ticker-track" aria-hidden="true"><div class="ticker-item"><span>Applied AI</span><i>✦</i><span>Agentic Workflows</span><i>✦</i><span>Backend Engineering</span><i>✦</i><span>Runtime Security</span><i>✦</i><span>LLM Evaluation</span><i>✦</i><span>Product Thinking</span><i>✦</i></div><div class="ticker-item"><span>Applied AI</span><i>✦</i><span>Agentic Workflows</span><i>✦</i><span>Backend Engineering</span><i>✦</i><span>Runtime Security</span><i>✦</i><span>LLM Evaluation</span><i>✦</i><span>Product Thinking</span><i>✦</i></div></div></div>
+<section class="section" id="work"><div class="wrap">
+<div class="section-head reveal"><div><div class="kicker mono"><b>01</b> PROJECTS / SELECTED BUILDS</div><h2>Proof of <span>build.</span></h2></div><p class="section-intro">A lab of AI products, development tools, and full-stack systems. Each build explores a practical problem with a focus on workflow, reliability, and usable outcomes.</p></div>
+<div class="project-tools reveal"><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All builds · 06</button><button class="filter" data-filter="ai" aria-pressed="false">AI / GenAI</button><button class="filter" data-filter="web" aria-pressed="false">Product apps</button><button class="filter" data-filter="tools" aria-pressed="false">Engineering tools</button></div><span class="count" id="count">06 RECORDS</span></div>
+<div class="project-grid" id="projectGrid">
+<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 001"><div class="diagram"><div class="mock-top"><span>VERITY // RESEARCH</span><span>MULTIMODAL</span></div><div class="mock-core">V/AI</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Applied AI / Agent platform</span><span>001—006</span></div><h3>Verity</h3><p>Enterprise-oriented multimodal research and action agent focused on retrieval, tool orchestration, and controlled execution.</p><ul class="project-points"><li>Hybrid retrieval patterns and multimodal ingestion for documents, tables, and images.</li><li>MCP-oriented tool integration, guarded SQL access, and approval gates for sensitive actions.</li><li>Citation/provenance-first responses with evaluation and regression-test foundations.</li></ul><div class="tags"><span>RAG</span><span>AI Agents</span><span>MCP</span><span>Evaluation</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="0" aria-label="Inspect engineering blueprint for project 1"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai web"><div class="project-art" data-code="PROJECT / 002"><div class="diagram"><div class="mock-top"><span>APPLYRIGHT</span><span>CAREER AI</span></div><div class="mock-core">AR</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Recruitment / AI product</span><span>002—006</span></div><h3>ApplyRight</h3><p>A recruitment and career platform supporting candidate and recruiter workflows with AI-assisted analysis.</p><ul class="project-points"><li>Candidate profiles, job listings, applications, and recruiter-side applicant views.</li><li>Gemini-backed resume insight, skill-gap analysis, job matching, and interview preparation.</li><li>FastAPI API layer with role-based access and JWT-oriented authentication.</li></ul><div class="tags"><span>React</span><span>FastAPI</span><span>Gemini</span><span>JWT</span></div><div class="project-links"><a href="https://applyright-puce.vercel.app/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="1" aria-label="Inspect engineering blueprint for project 2"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 003"><div class="diagram"><div class="mock-top"><span>PARCELPILOT</span><span>SUPPORT AGENT</span></div><div class="mock-core">PP</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Agent workflow / Support</span><span>003—006</span></div><h3>ParcelPilot AI Agent</h3><p>Evidence-first support assistant for order, parcel, and customer-policy questions.</p><ul class="project-points"><li>Retrieves account/order records and relevant operational policy documents.</li><li>Prioritizes authoritative sources and keeps account-scoped context separate.</li><li>Uses explicit confirmation gates for actions that may change system state.</li></ul><div class="tags"><span>Python</span><span>LLM tools</span><span>Retrieval</span></div><div class="project-links"><a href="https://parcelpilot-ai-agent.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="2" aria-label="Inspect engineering blueprint for project 3"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai tools"><div class="project-art" data-code="PROJECT / 004"><div class="diagram"><div class="mock-top"><span>SIGNAL LAB</span><span>MODEL QUALITY</span></div><div class="mock-core">EVAL</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">AI reliability / Tooling</span><span>004—006</span></div><h3>LLM Evaluation Lab</h3><p>An evaluation workspace for testing LLM applications with measurable quality gates.</p><ul class="project-points"><li>Workflow and dataset versioning with structured evaluation cases.</li><li>Scorecards and regression checks for groundedness, tool output, and injection resistance.</li><li>Human review for uncertain cases with latency and estimated-cost tracking.</li></ul><div class="tags"><span>LLMs</span><span>Regression tests</span><span>Release gates</span></div><div class="project-links"><a href="https://llmevallab-klar2hzi.manus.space/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="3" aria-label="Inspect engineering blueprint for project 4"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 005"><div class="diagram"><div class="mock-top"><span>SUPPORT CRM</span><span>OPERATIONS</span></div><div class="mock-core">CRM</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Business software</span><span>005—006</span></div><h3>CRM System</h3><p>A lightweight support CRM built around a practical ticket-management workflow.</p><ul class="project-points"><li>Ticket creation, status tracking, assignment, and operational CRUD flows.</li><li>React/Vite frontend backed by Express and SQLite.</li><li>Deployment-oriented setup and a simple interface for support operations.</li></ul><div class="tags"><span>React</span><span>Express</span><span>SQLite</span></div><div class="project-links"><a href="https://crm-system-nkaj.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="4" aria-label="Inspect engineering blueprint for project 5"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 006"><div class="diagram"><div class="mock-top"><span>KINDER OS</span><span>SCHOOL PLATFORM</span></div><div class="mock-core">K/OS</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Education / Full stack</span><span>006—006</span></div><h3>Kinder Garden Schools OS</h3><p>A school-facing platform designed to organize admissions and parent-oriented information.</p><ul class="project-points"><li>Admissions, galleries, fees, webinars, and school information sections.</li><li>Next.js frontend with Express API and MongoDB persistence.</li><li>JWT and password hashing foundations for protected workflows.</li></ul><div class="tags"><span>Next.js</span><span>Express</span><span>MongoDB</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="5" aria-label="Inspect engineering blueprint for project 6"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+</div>
+<details class="archive reveal"><summary><div><strong>Engineering archive / all repositories</strong><p class="muted" style="margin:5px 0 0;font-size:.77rem">Explore the broader trail of experiments, platforms, and practice repositories.</p></div><span>21 REPOS · OPEN ARCHIVE +</span></summary><div class="repo-grid">
+<article class="repo-card"><h4>Hemanth Kumar — Profile README</h4><p>Personal profile and overview</p><a href="https://github.com/hemanthkumar1012/hemanthkumar1012" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Cricket Tournament Management System</h4><p>Tournament workflow project</p><a href="https://github.com/hemanthkumar1012/Cricket-Tournament-Management-System-" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Portfolio Website</h4><p>Personal portfolio source</p><a href="https://github.com/hemanthkumar1012/Hemanth-kumar-portfolio" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot AI Support Agent</h4><p>Evidence-first support agent</p><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ApplyRight</h4><p>AI recruitment platform</p><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LeetCode Solutions</h4><p>Algorithm practice archive</p><a href="https://github.com/hemanthkumar1012/leetcode-solutions" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot</h4><p>Logistics workflows</p><a href="https://github.com/hemanthkumar1012/ParcelPilot" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Aegis</h4><p>Runtime security control plane</p><a href="https://github.com/hemanthkumar1012/aegis" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Platform</h4><p>Logistics product platform</p><a href="https://github.com/hemanthkumar1012/parcelpilot-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLD Practice Lab</h4><p>Low-level design exercises</p><a href="https://github.com/hemanthkumar1012/lld-practice-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CodeAlpha Tasks</h4><p>Internship project collection</p><a href="https://github.com/hemanthkumar1012/codealpha_tasks" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>AgentGuard</h4><p>Runtime security for AI agents</p><a href="https://github.com/hemanthkumar1012/agentguard" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLM Evaluation Lab</h4><p>LLM testing and release evaluation</p><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Hiver SDE Intern</h4><p>Support dataset / agent task</p><a href="https://github.com/hemanthkumar1012/parcelpilot-hiver-sde-intern" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CRM System</h4><p>Customer-support CRM</p><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Company Intranet Portal</h4><p>Internal company workflow portal</p><a href="https://github.com/hemanthkumar1012/company-intranet-portal" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Verity Enterprise Agent</h4><p>Multimodal research and action agent</p><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Invexom Cybersecurity Assessment</h4><p>Cybersecurity awareness assessment</p><a href="https://github.com/hemanthkumar1012/invexom-cybersecurity-awareness-assessment" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>SevaSetu Bharat Agentic</h4><p>Citizen action agent concept</p><a href="https://github.com/hemanthkumar1012/sevasetu-bharat-agentic-2026" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Kinder Garden Schools OS</h4><p>School information platform</p><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>finch-cactus-plum-kite</h4><p>Repository in profile archive</p><a href="https://github.com/hemanthkumar1012/finch-cactus-plum-kite" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
+
+</div></details>
+</div></section>
 <div class="ticker"><div class="ticker-track" aria-hidden="true"><div class="ticker-item"><span>Understand the problem</span><i>✦</i><span>Build the smallest useful system</span><i>✦</i><span>Test assumptions</span><i>✦</i><span>Ship and improve</span><i>✦</i></div><div class="ticker-item"><span>Understand the problem</span><i>✦</i><span>Build the smallest useful system</span><i>✦</i><span>Test assumptions</span><i>✦</i><span>Ship and improve</span><i>✦</i></div></div></div>
 <section class="section" id="capabilities"><div class="wrap cap-grid">
-<div class="cap-intro reveal"><div class="kicker mono"><b>02</b> CAPABILITIES / TOOLKIT</div><h2>Engineer the <span>details.</span></h2><p>I enjoy the space where software meets real user needs: defining the problem, building a useful path through it, and making the system understandable and maintainable.</p><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Browse code on GitHub ↗</a><div class="skill-cloud"><span>Python</span><span>SQL</span><span>JavaScript</span><span>FastAPI</span><span>REST APIs</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>MongoDB</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Git</span><span>Linux</span><span>LLM workflows</span><span>RAG</span><span>Evaluation</span><span>System design</span></div></div>
+<div class="cap-intro reveal"><div class="kicker mono"><b>03</b> CAPABILITIES / TOOLKIT</div><h2>Engineer the <span>details.</span></h2><p>I enjoy the space where software meets real user needs: defining the problem, building a useful path through it, and making the system understandable and maintainable.</p><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">Browse code on GitHub ↗</a><div class="skill-cloud"><span>Python</span><span>SQL</span><span>JavaScript</span><span>FastAPI</span><span>REST APIs</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span><span>MongoDB</span><span>React</span><span>TypeScript</span><span>Next.js</span><span>Node.js</span><span>Git</span><span>Linux</span><span>LLM workflows</span><span>RAG</span><span>Evaluation</span><span>System design</span></div></div>
 <div class="cap-cards">
 <article class="cap-card reveal"><span class="n">CAPABILITY / 01</span><h3>Applied AI</h3><p>Agentic workflows, retrieval-oriented systems, prompt/tool orchestration, evaluation, and human review.</p></article>
 <article class="cap-card reveal"><span class="n">CAPABILITY / 02</span><h3>Backend engineering</h3><p>Python APIs, REST design, authentication basics, database-backed workflows, and practical integrations.</p></article>
 <article class="cap-card reveal"><span class="n">CAPABILITY / 03</span><h3>Full-stack delivery</h3><p>Responsive interfaces, client/server integration, CRUD workflows, and deployment-aware iteration.</p></article>
 <article class="cap-card reveal"><span class="n">CAPABILITY / 04</span><h3>Safety & reliability</h3><p>Scoped tool access, approval boundaries, source attribution, regression tests, and observable failure modes.</p></article>
 </div></div></section>
-<section class="section" id="process"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>03</b> HOW I WORK</div><h2>Think. Build. <span>Refine.</span></h2></div><p class="section-intro">A practical engineering loop: build for the actual user, keep the system legible, and improve it using what testing reveals.</p></div><div class="process-grid">
+<section class="section" id="process"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>04</b> HOW I WORK</div><h2>Think. Build. <span>Refine.</span></h2></div><p class="section-intro">A practical engineering loop: build for the actual user, keep the system legible, and improve it using what testing reveals.</p></div><div class="process-grid">
 <article class="process-card reveal" data-number="01"><span class="mono">PHASE 01 / DEFINE</span><h3>Start with why</h3><p>Clarify the user, the problem, and the smallest outcome that would genuinely help.</p></article>
 <article class="process-card reveal" data-number="02"><span class="mono">PHASE 02 / BUILD</span><h3>Make it real</h3><p>Choose a simple architecture, connect the pieces, and build a working vertical slice.</p></article>
 <article class="process-card reveal" data-number="03"><span class="mono">PHASE 03 / IMPROVE</span><h3>Test the edges</h3><p>Check errors, permissions, data flow, accessibility, and where assumptions break.</p></article>
 </div></div></section>
-<section class="section" id="experience"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>04</b> EXPERIENCE / FIELD NOTES</div><h2>Learn through <span>shipping.</span></h2></div><p class="section-intro">Industry and internship experience across maintenance, full-stack implementation, integration, and iterative project work.</p></div><div class="experience-grid">
+<section class="section" id="experience"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>05</b> EXPERIENCE / FIELD NOTES</div><h2>Learn through <span>shipping.</span></h2></div><p class="section-intro">Industry and internship experience across maintenance, full-stack implementation, integration, and iterative project work.</p></div><div class="experience-grid">
 <article class="experience-card reveal"><div class="experience-meta"><span>Thiranex</span><span>Sep — Oct 2026</span></div><h3>Full Stack Development Intern</h3><div class="experience-role">Product development / Integration / QA</div><ul><li>Worked on assigned user-facing features and full-stack implementation tasks.</li><li>Refined frontend components and coordinated API integration and data-flow behavior.</li><li>Tested flows, troubleshot implementation issues, and iterated on project requirements.</li></ul></article>
 <article class="experience-card reveal"><div class="experience-meta"><span>CodeAlpha</span><span>Sep — Oct 2026</span></div><h3>Full Stack Development Intern</h3><div class="experience-role">Web applications / Feature delivery</div><ul><li>Built and refined internship project features with attention to end-to-end usability.</li><li>Practiced frontend/backend integration, form and state handling, and data persistence patterns.</li><li>Organized deliverables in GitHub and prepared projects for review and deployment.</li></ul></article>
 <article class="experience-card reveal"><div class="experience-meta"><span>Tirumala Milk Products Pvt. Ltd.</span><span>6 months</span></div><h3>Maintenance Internship</h3><div class="experience-role">Maintenance section / On-site</div><ul><li>Completed an on-site internship within the maintenance section.</li><li>Gained exposure to operational routines, equipment upkeep, and workplace safety practices.</li></ul></article>
 </div></div></section>
 <section class="section" id="journey"><div class="wrap journey-grid">
-<div class="reveal"><div class="kicker mono"><b>05</b> EDUCATION / TIMELINE</div><h2>Foundation to <span>future.</span></h2><p class="muted">Building software and AI skills on top of an engineering education, with learning reinforced through hands-on projects.</p></div>
+<div class="reveal"><div class="kicker mono"><b>06</b> EDUCATION / TIMELINE</div><h2>Foundation to <span>future.</span></h2><p class="muted">Building software and AI skills on top of an engineering education, with learning reinforced through hands-on projects.</p></div>
 <div class="timeline reveal">
 <article class="timeline-item"><span class="timeline-dot"></span><div><div class="timeline-label">Current · Expected 2027</div><h3>B.Tech / Computer Science Engineering</h3><p>Sri Venkateswara University College of Engineering, Andhra Pradesh · CGPA 7.5/10 (as listed on resume)</p></div><span class="timeline-date">2024—2027</span></article>
 <article class="timeline-item"><span class="timeline-dot"></span><div><div class="timeline-label">Diploma · EEE</div><h3>Electrical & Electronics Engineering</h3><p>Sri Venkateswara Government Polytechnic, Tirupati · 73.39%</p></div><span class="timeline-date">2021—2024</span></article>
 <article class="timeline-item"><span class="timeline-dot"></span><div><div class="timeline-label">School</div><h3>Narayana English Medium High School</h3><p>Secondary school · 98%</p></div><span class="timeline-date">Completed</span></article>
 </div></div></section>
-<section class="section" id="certifications"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>06</b> CERTIFICATIONS / PROGRAMS</div><h2>Always in <span>R&D.</span></h2></div><p class="section-intro">Structured learning across machine learning, software engineering, analytics, and full-stack development.</p></div><div class="cert-grid">
+<section class="section" id="certifications"><div class="wrap"><div class="section-head reveal"><div><div class="kicker mono"><b>07</b> CERTIFICATIONS / PROGRAMS</div><h2>Always in <span>R&D.</span></h2></div><p class="section-intro">Structured learning across machine learning, software engineering, analytics, and full-stack development.</p></div><div class="cert-grid">
 <article class="cert-card reveal"><span class="cert-mark">IBM</span><div><h3>Machine Learning for Data Science</h3><p>IBM SkillsBuild · 2026</p></div></article>
 <article class="cert-card reveal"><span class="cert-mark">HPE</span><div><h3>Software Engineering Job Simulation</h3><p>HPE / Forage · 2026</p></div></article>
 <article class="cert-card reveal"><span class="cert-mark">TATA</span><div><h3>GenAI-Powered Data Analytics Job Simulation</h3><p>Tata Group / Forage · 2026</p></div></article>
 <article class="cert-card reveal"><span class="cert-mark">D</span><div><h3>Data Analytics Job Simulation</h3><p>Deloitte / Forage · 2026</p></div></article>
 <div class="education-mini reveal"><strong>NXTWave CCBP 4.0 — Full Stack Development Program</strong><span>Expected 2027 · HTML/CSS, JavaScript, Node.js, Python, DSA, data analytics, Git, databases, and system design modules.</span></div>
 </div></div></section>
-<section class="section" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker mono"><b>07</b> OPEN CHANNEL / CONTACT</div><h2>Let's build the <em>future.</em></h2><p>Open to AI engineering and software development opportunities where I can contribute to Python systems, AI-assisted workflows, reliable APIs, and useful products.</p><div class="social-row"><a class="social-chip" href="https://www.linkedin.com/in/v-hemanth-kumar-yadav/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="social-chip" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social-chip" href="https://leetcode.com/u/hemanthkumar1012/" target="_blank" rel="noreferrer">LeetCode ↗</a><a class="social-chip" href="mailto:hemanthkumaryadav13@gmail.com">Email ↗</a><a class="social-chip" href="tel:+917075979460">Phone ↗</a></div></div><div class="contact-actions"><a class="btn gold" href="mailto:hemanthkumaryadav13@gmail.com">Send a message ↗</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></div></section>
+<section class="section" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker mono"><b>08</b> OPEN CHANNEL / CONTACT</div><h2>Let's build the <em>future.</em></h2><p>Open to AI engineering and software development opportunities where I can contribute to Python systems, AI-assisted workflows, reliable APIs, and useful products.</p><div class="social-row"><a class="social-chip" href="https://www.linkedin.com/in/v-hemanth-kumar-yadav/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="social-chip" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social-chip" href="https://leetcode.com/u/hemanthkumar1012/" target="_blank" rel="noreferrer">LeetCode ↗</a><a class="social-chip" href="mailto:hemanthkumaryadav13@gmail.com">Email ↗</a><a class="social-chip" href="tel:+917075979460">Phone ↗</a></div></div><div class="contact-actions"><a class="btn gold" href="mailto:hemanthkumaryadav13@gmail.com">Send a message ↗</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></div></section>
 </main>
 <dialog class="system-dialog command-dialog" id="commandDialog" aria-labelledby="commandTitle">
   <div class="dialog-top mono"><span><i class="live-dot"></i> J.A.R.V.I.S. / COMMAND INTERFACE</span><button type="button" class="dialog-close" data-close-dialog aria-label="Close command interface">ESC ✕</button></div>
@@ -728,6 +930,20 @@ if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEve
     diagnosticTimer=setInterval(()=>{step++;const pct=Math.min(100,step*20);if(progress)progress.style.width=pct+'%';if(percent)percent.textContent=String(pct).padStart(2,'0')+'%';if(message)message.textContent=checks[Math.min(step,checks.length-1)];if(step>=5){clearInterval(diagnosticTimer);diagnosticTimer=null;diagnosticButton.disabled=false;diagnosticButton.textContent='Run diagnostics ⌁';if(label)label.textContent='READY';pushActivity('Local UI checks completed / no backend queried','DONE');showToast('LOCAL UI DIAGNOSTIC COMPLETE / DISPLAY ONLY')}},330);
   });
   document.getElementById('jarvisFab')?.addEventListener('click',openCommandPalette);
+
+  const heroClock=document.getElementById('heroClock');
+  const updateHeroClock=()=>{if(heroClock)heroClock.textContent=new Intl.DateTimeFormat(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date())};
+  updateHeroClock();setInterval(updateHeroClock,1000);
+  const railLinks=[...document.querySelectorAll('#sectionRail a')];
+  const railTargets=railLinks.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if('IntersectionObserver'in window&&railTargets.length){
+    const railObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){
+        railLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+      }});
+    },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+    railTargets.forEach(target=>railObserver.observe(target));
+  }
 })();
 </script>
 
