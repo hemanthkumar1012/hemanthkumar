@@ -86,15 +86,203 @@ footer{border-top:1px solid #252d37;padding:25px 0;color:#7d8996;font:500 .55rem
 @media(max-width:760px){.wrap{width:calc(100% - 28px)}.nav{height:68px}.nav-right>.btn{display:none}.menu{display:grid;place-items:center}.nav-links{display:none;position:absolute;left:0;right:0;top:68px;flex-direction:column;align-items:stretch;padding:17px 24px 22px;background:#090d14;border-bottom:1px solid #2b3743}.nav-links.open{display:flex}.nav-links a{font-size:.7rem;padding:8px 0}.hero{padding-top:27px}.topline{font-size:.49rem;align-items:flex-start}.topline>span:last-child{text-align:right}.hero-grid{grid-template-columns:1fr;min-height:auto;padding:40px 0 10px;gap:20px}.hero h1{font-size:clamp(4.6rem,15vw,7.4rem)}.hero-copy>p{font-size:.87rem}.mini-stats{margin-top:29px}.stat{padding-right:17px;margin-right:17px;min-width:0}.stat b{font-size:1.8rem}.reactor-wrap{min-height:min(115vw,540px);margin-top:0}.reactor-orbit{width:85vw}.reactor-card{width:min(100%,520px)}.hud.hud-a{left:0;top:12%}.hud.hud-b{right:0;bottom:9%}.section{padding:78px 0}.section-head{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:31px}.section-intro{max-width:650px}.project-grid{grid-template-columns:1fr}.project-art{height:235px}.cap-grid,.journey-grid{grid-template-columns:1fr;gap:29px}.cap-intro{position:static}.experience-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.process-card{min-height:0}.contact-panel{grid-template-columns:1fr;gap:27px}.contact-actions{justify-content:flex-start}.footer-inner{align-items:flex-start;flex-direction:column}.cert-grid{grid-template-columns:1fr}.education-mini{grid-column:auto}}
 @media(max-width:460px){.wrap{width:calc(100% - 20px)}.brand small{font-size:.48rem}.brand-mark{width:35px;height:35px}.topline{gap:10px}.system-id{gap:7px}.hero h1{font-size:clamp(4rem,15vw,5.5rem)}.eyebrow{font-size:.56rem}.hero-actions .btn{width:100%}.stat{padding-right:12px;margin-right:12px}.stat b{font-size:1.55rem}.stat span{font-size:.47rem}.reactor-wrap{min-height:380px}.reactor-card{width:100%}.hud{padding:9px 10px}.hud.hud-a{top:9%}.hud.hud-b{bottom:7%}.hud b{font-size:1rem}.reactor-top{left:18px;right:18px;top:19px}.reactor-bottom{left:18px;right:18px;bottom:18px}.section h2{font-size:3.2rem}.project-body{padding:22px 18px}.repo-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:10px minmax(0,1fr);gap:11px}.timeline-date{grid-column:2}.contact-panel{padding:28px 18px}.contact-panel h2{font-size:3.4rem}.social-chip{font-size:.49rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.reactor-orbit,.reactor-svg .rings,.arc-core,.ticker-track{animation:none}.btn,.project,.cap-card{transition:none}}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   STARK SYSTEMS / MK-X INTERFACE LAYER
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root{--gold:#f1c878;--amber:#ffdf9b;--red:#ff5149;--cyan:#8ff4ff;--bg:#07090d}
+body{background:radial-gradient(ellipse at 72% 4%,#55341938,transparent 34%),radial-gradient(ellipse at 8% 42%,#18313e26,transparent 30%),#07090d}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 3px,#dceeff06 4px 5px);mix-blend-mode:screen}
+.nav{height:78px}
+.nav-right{gap:8px}
+.command-trigger{gap:9px;border-color:#3b4650;color:#cbd3da;background:#0d131a}
+.command-trigger>span{font-size:1.1rem;color:var(--gold)}
+.command-trigger kbd{margin-left:4px;border:1px solid #47515b;padding:3px 5px;color:#788795;font:500 .47rem "DM Mono",monospace}
+.contact-shortcut{padding-inline:13px}
+.hero{padding-top:45px}
+.hero-grid{min-height:690px}
+.hero-copy{position:relative;z-index:2}
+.hero-copy:before{content:"PERSONAL ENGINEERING DIVISION / 07";display:block;position:absolute;top:-25px;right:0;color:#4e5a66;font:500 .48rem "DM Mono",monospace;letter-spacing:.12em}
+.hero h1{font-size:clamp(5.2rem,8.65vw,9.8rem);text-shadow:0 15px 65px #0008}
+.hero h1 .first{color:#f7f5ef;text-shadow:1px 2px 0 #7c7c75,0 0 35px #fff1}
+.hero h1 .middle{color:#edbd64;text-shadow:2px 3px 0 #5b351a,0 0 40px #e7b86615}
+.hero h1 .last{color:#fb5047;text-shadow:2px 3px 0 #651815,0 0 35px #f0442b17}
+.hero-copy>p{font-size:.95rem;max-width:520px}
+.hero-copy strong{color:#fff0cf}
+.hero-actions .btn{min-height:48px}
+.mini-stats{max-width:560px;border-color:#303942;background:linear-gradient(90deg,#11171e66,transparent)}
+.stat b{font-size:2.4rem;text-shadow:0 0 24px #e7b86618}
+.reactor-wrap{min-height:660px;transform-style:preserve-3d;perspective:1300px}
+.reactor-orbit{width:min(47vw,610px);border-color:#eac47759;box-shadow:0 0 100px #e7b86608,inset 0 0 60px #7be7f30b}
+.reactor-orbit:before{inset:8%;border-color:#7be7f347;animation:orbit 52s linear infinite reverse}
+.reactor-orbit:after{inset:18%;border-color:#e7b86638;box-shadow:0 0 0 15px #e7b86604,0 0 0 40px #7be7f302}
+.reactor-card{width:min(100%,580px);border-color:#64533b;background:radial-gradient(circle at 50% 42%,#23343a30,transparent 44%),linear-gradient(145deg,#171c22,#090c11 69%);box-shadow:0 40px 100px #000b,inset 0 0 100px #000a,0 0 0 1px #f1c8780b;transition:transform .18s ease,border-color .3s,box-shadow .3s;transform:rotateX(var(--tilt-y,0deg)) rotateY(var(--tilt-x,0deg))}
+.reactor-card:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(300px circle at var(--light-x,50%) var(--light-y,45%),#f1c87812,transparent 70%);opacity:.8;z-index:1}
+.reactor-card:hover{border-color:#9f8151;box-shadow:0 48px 110px #000c,inset 0 0 110px #000b,0 0 50px #7be7f30a}
+.reactor-top{z-index:8;left:27px;right:27px}
+.reactor-modebar{position:absolute;z-index:9;left:50%;top:61px;transform:translateX(-50%);display:flex;gap:4px;padding:4px;border:1px solid #3d454a;background:#090d12db;white-space:nowrap}
+.reactor-modebar button{border:1px solid transparent;background:transparent;padding:7px 9px;color:#697989;font:500 .48rem "DM Mono",monospace;letter-spacing:.06em;cursor:pointer;transition:color .2s,border .2s,background .2s}
+.reactor-modebar button:hover{color:#fff0cd}
+.reactor-modebar button.active{color:#17140f;background:var(--gold);border-color:var(--gold)}
+.reactor-svg,.armor-svg,.ai-svg{width:88%;height:88%;position:relative;z-index:2;overflow:visible;transition:filter .4s,transform .4s;filter:drop-shadow(0 0 26px #7be7f315)}
+.armor-svg,.ai-svg{display:none}
+.reactor-card[data-mode="armor"] .reactor-svg,.reactor-card[data-mode="ai"] .reactor-svg{display:none}
+.reactor-card[data-mode="armor"] .armor-svg,.reactor-card[data-mode="ai"] .ai-svg{display:block}
+.reactor-card[data-mode="armor"] .arc-core{animation:none}
+.reactor-card[data-mode="armor"] .armor-svg{filter:drop-shadow(0 0 26px #e7b86624)}
+.reactor-card[data-mode="ai"] .ai-svg{filter:drop-shadow(0 0 30px #7be7f332)}
+.reactor-card[data-mode="armor"] .reactor-top strong{color:#ff7169}
+.reactor-card[data-mode="ai"] .reactor-top strong{color:var(--cyan)}
+.reactor-card[data-mode="armor"] .reactor-top span{color:#ff9383}
+.reactor-card[data-mode="ai"] .reactor-top span{color:var(--cyan)}
+.helmet-eyes{filter:drop-shadow(0 0 12px #7be7f3bc);animation:visor-scan 3.4s ease-in-out infinite}
+.helmet-shell{filter:drop-shadow(0 15px 18px #0009)}
+.ai-orbits{transform-origin:250px 250px;animation:orbit 60s linear infinite}
+.ai-node{filter:drop-shadow(0 0 5px #e7b866)}
+.reactor-telemetry{position:absolute;z-index:8;left:28px;right:28px;bottom:67px;display:flex;justify-content:space-between;gap:8px;color:#6f7b88;font-size:.44rem;letter-spacing:.06em;border-top:1px solid #2d3439;padding-top:9px}
+.reactor-telemetry span{display:flex;gap:5px;align-items:center}
+.reactor-telemetry b{color:#abb6c2;font-weight:500}.reactor-telemetry .cyan{color:var(--cyan)}
+.reactor-bottom{left:28px;right:28px;bottom:23px}
+.hud{border-color:#53452f;background:linear-gradient(145deg,#121821f0,#080c12f2);box-shadow:0 18px 38px #0009,0 0 22px #e7b86608}
+.hud:before{content:"";position:absolute;top:-1px;left:9px;width:20px;height:2px;background:var(--gold)}
+.hud.hud-a{left:-12px;top:15%;animation:hud-float 5.8s ease-in-out infinite}
+.hud.hud-b{right:-12px;bottom:13%;animation:hud-float 6.4s ease-in-out -2s infinite}
+.hud b{font-size:1.35rem;text-shadow:0 0 22px #7be7f322}
+.topline{border-color:#303944}
+.system-id b{color:var(--gold)}
+.signal:before{box-shadow:0 0 18px var(--cyan)}
+.ticker{background:#0b1016;border-color:#34302a;position:relative}
+.ticker:before,.ticker:after{content:"";position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
+.ticker:before{left:0;background:linear-gradient(90deg,#0b1016,transparent)}
+.ticker:after{right:0;background:linear-gradient(270deg,#0b1016,transparent)}
+.ticker-track{animation-duration:34s}
+.section{position:relative;isolation:isolate}
+.section:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,#e7b86675,#7be7f355,transparent);pointer-events:none}
+.section:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.23;background:radial-gradient(ellipse at 86% 10%,#e7b86608,transparent 40%),linear-gradient(180deg,#fff0, #7be7f302 50%,#fff0)}
+.section h2{font-size:clamp(3.8rem,6.3vw,6.6rem);text-shadow:0 8px 38px #0006}
+.section h2 span{color:#f1c878;text-shadow:0 0 40px #e7b86612}
+.kicker b{box-shadow:0 0 20px #e7b86610;background:#1a1711}
+.section-intro{font-size:.88rem}
+.project-tools{border-color:#333a42}
+.filter{position:relative;overflow:hidden;transition:color .25s,border-color .25s,background .25s}
+.filter:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.filter.active:after,.filter:hover:after{transform:scaleX(1)}
+.project{--px:50%;--py:50%;transform-style:preserve-3d;transition:transform .25s ease,border-color .25s,box-shadow .25s}
+.project:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;opacity:0;background:radial-gradient(480px circle at var(--px) var(--py),#f1c87814,transparent 55%);transition:opacity .3s}
+.project:hover:before{opacity:1}
+.project:hover{border-color:#a08250;box-shadow:0 25px 65px #0009,0 0 0 1px #e7b86610}
+.project-art{background:radial-gradient(ellipse at 50% 48%,#4c341b,#161b22 48%,#0b1017)}
+.project-art:before{background-image:linear-gradient(#e7b86614 1px,transparent 1px),linear-gradient(90deg,#7be7f30c 1px,transparent 1px);background-size:22px 22px;transform:perspective(400px) rotateX(0deg)}
+.project-art .diagram{box-shadow:inset 0 0 45px #e7b86608,0 15px 40px #0008;transition:transform .35s,border-color .3s,box-shadow .3s}
+.project:hover .diagram{transform:translateY(-4px) rotateX(4deg) scale(1.035);border-color:#e7b866;box-shadow:inset 0 0 45px #e7b86610,0 24px 55px #0009}
+.mock-core{width:74px;height:74px;font-size:1.22rem;box-shadow:0 0 0 7px #7be7f305,0 0 40px #7be7f326,inset 0 0 20px #7be7f30b;transition:box-shadow .3s,transform .3s}
+.project:hover .mock-core{box-shadow:0 0 0 10px #7be7f309,0 0 50px #7be7f34c,inset 0 0 30px #7be7f318;transform:scale(1.05)}
+.project-body{position:relative;z-index:3}
+.project h3{font-size:clamp(2.15rem,3.4vw,3.2rem)}
+.project-links{align-items:center;gap:13px}
+.project-links a{font-size:.53rem}
+.blueprint-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;gap:10px;margin-top:17px;border:1px solid #343d45;background:linear-gradient(90deg,#161b20,#0b1016);padding:12px 13px;text-align:left;color:#9eb4c2;cursor:pointer;transition:border-color .25s,color .25s,background .25s}
+.blueprint-trigger span{font-size:1rem;color:var(--gold)}
+.blueprint-trigger b{color:var(--cyan);font-weight:500}
+.blueprint-trigger:hover{border-color:#b28a4c;color:#f8e3b8;background:linear-gradient(90deg,#211c14,#0c1218)}
+.archive{box-shadow:0 25px 65px #0003}
+.archive summary{transition:background .2s}.archive summary:hover{background:#ffffff04}
+.cap-card,.process-card,.experience-card,.cert-card,.repo-card{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+.cap-card:before,.process-card:before,.experience-card:before,.cert-card:before,.repo-card:before{content:"";position:absolute;top:0;left:-100%;height:1px;width:100%;background:linear-gradient(90deg,transparent,var(--gold),transparent);transition:left .6s}
+.cap-card:hover:before,.process-card:hover:before,.experience-card:hover:before,.cert-card:hover:before,.repo-card:hover:before{left:100%}
+.cap-card:hover,.process-card:hover,.experience-card:hover,.cert-card:hover,.repo-card:hover{border-color:#645037;box-shadow:0 15px 38px #0005}
+.timeline-item{transition:background .2s,padding .2s}
+.timeline-item:hover{background:linear-gradient(90deg,#e7b86607,transparent);padding-left:9px}
+.social-chip{transition:color .2s,border-color .2s,transform .2s}
+.social-chip:hover{transform:translateY(-2px)}
+.system-dialog{width:min(740px,calc(100% - 26px));max-height:min(84vh,850px);padding:0;border:1px solid #5b4b32;background:#090e14;color:#f3f3ed;box-shadow:0 45px 140px #000e,0 0 0 1px #e7b86615;overflow:auto;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
+.system-dialog::backdrop{background:#03060bd9;backdrop-filter:blur(12px)}
+.dialog-top{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 19px;background:#0b1119f5;border-bottom:1px solid #303a43;color:#b0bdc9;font-size:.53rem}
+.dialog-top>span{display:flex;align-items:center;gap:9px}
+.live-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.dialog-close{border:1px solid #39424c;background:#0b1119;color:#aab8c4;font:500 .5rem "DM Mono",monospace;padding:7px 9px;cursor:pointer}
+.dialog-close:hover{border-color:var(--gold);color:var(--gold)}
+.command-heading{padding:27px 29px 18px}.command-heading>span{color:var(--gold);font-size:.53rem}
+.command-heading h2{font:700 clamp(2.8rem,6vw,4.6rem)/.9 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:13px 0 7px}
+.command-heading h2 em{font-style:normal;color:var(--gold)}
+.command-heading p{color:#8795a3;font-size:.78rem}
+.command-input-wrap{display:flex;align-items:center;gap:11px;margin:0 29px 17px;border:1px solid #394550;background:#080c11;padding:0 14px;min-height:53px;color:var(--cyan)}
+.command-input-wrap input{min-width:0;flex:1;border:0;outline:0;background:transparent;color:#f2f1eb;font:500 .8rem Manrope, sans-serif}
+.command-input-wrap input::placeholder{color:#606e7b}
+.command-input-wrap kbd{color:#687b8b;border:1px solid #34414c;padding:3px 6px;font:500 .55rem "DM Mono",monospace}
+.command-list{padding:0 18px 18px;display:grid;gap:5px}
+.command-item{display:grid;grid-template-columns:37px minmax(0,1fr) auto;align-items:center;gap:12px;text-align:left;border:1px solid transparent;background:#0c121a;padding:12px;cursor:pointer;transition:border-color .15s,background .15s}
+.command-item:hover,.command-item.selected{border-color:#5d4b31;background:#17170f}
+.command-icon{height:35px;width:35px;display:grid;place-items:center;border:1px solid #3a423f;background:#121917;color:var(--gold);font-size:.9rem}
+.command-item strong{display:block;font:600 .69rem "DM Mono",monospace;color:#e9e8e1}
+.command-item small{display:block;color:#778695;font-size:.64rem;margin-top:3px}
+.command-item kbd{font:500 .48rem "DM Mono",monospace;color:#72808d;border:1px solid #303b44;padding:4px 6px}
+.command-item[hidden]{display:none}
+.dialog-foot{display:flex;justify-content:space-between;gap:15px;padding:12px 20px;border-top:1px solid #27313a;color:#5f6f7d;font-size:.48rem;letter-spacing:.1em}
+.blueprint-content{padding:29px}
+.blueprint-kicker{color:var(--gold);font-size:.54rem}
+.blueprint-title{font:800 clamp(3rem,7vw,5.2rem)/.88 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:12px 0}
+.blueprint-description{color:#a0aeba;max-width:620px;font-size:.83rem;line-height:1.85}
+.blueprint-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:24px 0}
+.blueprint-stats div{border:1px solid #2c3944;background:#0d141c;padding:13px}
+.blueprint-stats small{display:block;color:#6f8290;font:.49rem "DM Mono",monospace;text-transform:uppercase}
+.blueprint-stats b{display:block;margin-top:6px;color:#dfc18b;font:600 1rem "Barlow Condensed",sans-serif;text-transform:uppercase}
+.blueprint-section-label{margin:26px 0 12px;color:#7b8e9e;font:.54rem "DM Mono",monospace;letter-spacing:.13em}
+.blueprint-flow{display:flex;align-items:stretch;gap:7px;flex-wrap:wrap}
+.blueprint-node{flex:1 1 100px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;min-height:86px;border:1px solid #46513f;background:linear-gradient(145deg,#141a19,#0b1117);padding:11px}
+.blueprint-node span{font:.48rem "DM Mono",monospace;color:var(--gold)}
+.blueprint-node strong{font:600 .67rem "DM Mono",monospace;color:#d4e2ec;line-height:1.5}
+.blueprint-node:after{content:"OUTPUT / VERIFIED";font:500 .39rem "DM Mono",monospace;color:#526d6d}
+.blueprint-bullets{padding-left:18px;color:#a2b2be;font-size:.76rem;line-height:1.9}
+.blueprint-bullets li::marker{color:var(--gold)}
+.blueprint-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}
+.blueprint-tags span{padding:6px 9px;border:1px solid #2d4048;color:#8dcbd3;font:.49rem "DM Mono",monospace;text-transform:uppercase}
+.blueprint-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px;padding-top:20px;border-top:1px solid #29343e}
+.toast{position:fixed;right:24px;bottom:23px;z-index:400;max-width:calc(100% - 32px);padding:13px 17px;border:1px solid #605034;background:#0b1118;color:#e9d19d;box-shadow:0 18px 55px #0009;font-size:.54rem;letter-spacing:.08em;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translateY(0)}
+.cursor-orb{position:fixed;left:0;top:0;width:38px;height:38px;z-index:350;pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .2s}
+.cursor-orb i{position:absolute;inset:0;border:1px solid #f1c87899;border-radius:50%;box-shadow:0 0 20px #e7b86615,inset 0 0 12px #e7b8660c}
+.cursor-orb b{position:absolute;left:50%;top:50%;width:4px;height:4px;border-radius:50%;background:var(--cyan);transform:translate(-50%,-50%);box-shadow:0 0 9px var(--cyan)}
+.cursor-orb:before,.cursor-orb:after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#7be7f38c}
+.cursor-orb:before{width:1px;height:50px}.cursor-orb:after{height:1px;width:50px}
+body.stark-cursor a,body.stark-cursor button{cursor:none}
+body.stark-cursor .cursor-orb{opacity:1}
+body.stark-cursor .cursor-orb.hot i{border-color:#7be7f3;transform:scale(1.3)}
+.boot-screen{position:fixed;inset:0;z-index:500;background:radial-gradient(circle at 50% 43%,#213039 0,#080b10 34%,#040609 80%);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:27px;transition:opacity .7s,visibility .7s}
+.boot-screen:before,.boot-screen:after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#e7b8665c,#7be7f363,transparent)}
+.boot-screen:before{top:17%}.boot-screen:after{bottom:17%}
+.boot-screen.done{opacity:0;visibility:hidden;pointer-events:none}
+.boot-sigil{width:156px;height:156px;position:relative;display:grid;place-items:center}
+.boot-ring{position:absolute;border-radius:50%;border:1px solid #e7b86675;inset:0;box-shadow:0 0 25px #e7b86608;animation:boot-spin 7s linear infinite}
+.ring-b{inset:13px;border-color:#7be7f383;border-style:dashed;animation-direction:reverse;animation-duration:9s}
+.ring-c{inset:30px;border:5px solid transparent;border-left-color:#e7b866;border-right-color:#7be7f3;box-shadow:0 0 23px #7be7f325;animation-duration:3.5s}
+.boot-core{position:absolute;inset:51px;background:radial-gradient(circle,#d7ffff 0,#7be7f3 26%,#e7b866a3 45%,transparent 75%);filter:drop-shadow(0 0 22px #7be7f3);animation:reactor-pulse 1.8s infinite}
+.boot-sigil b{position:relative;color:#f9e1ac;font:700 1.5rem "Barlow Condensed",sans-serif;letter-spacing:.08em;text-shadow:0 0 20px #e7b86688}
+.boot-copy{display:grid;justify-items:center;gap:13px;color:#73818e;font-size:.53rem;letter-spacing:.13em}
+.boot-copy>span{color:#e7b866}.boot-copy strong{font:600 clamp(1.4rem,4vw,2.4rem) "Barlow Condensed",sans-serif;color:#ece9e1;letter-spacing:.12em}.boot-copy em{font-style:normal;color:var(--cyan)}
+.boot-copy small{display:flex;gap:14px;align-items:center;font-size:.47rem}.boot-meter{height:2px;background:#26333b;width:min(270px,67vw);overflow:hidden}.boot-meter i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan));animation:boot-load 1.7s cubic-bezier(.2,.8,.15,1) forwards}
+.boot-skip{position:absolute;right:25px;bottom:23px;color:#788b98;background:transparent;border:0;font-size:.49rem;cursor:pointer}.boot-skip:hover{color:var(--gold)}
+@keyframes boot-spin{to{transform:rotate(360deg)}}@keyframes boot-load{to{width:100%}}@keyframes visor-scan{0%,100%{filter:brightness(.8)}50%{filter:brightness(1.5)}}@keyframes hud-float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+@media(max-width:1100px){.nav-links{gap:10px}.nav-links a{font-size:.51rem}.command-trigger kbd{display:none}.contact-shortcut{display:none}.hero-grid{min-height:630px}.hero h1{font-size:clamp(4.7rem,8.4vw,8rem)}.reactor-wrap{min-height:590px}.reactor-telemetry{font-size:.4rem}}
+@media(max-width:760px){.command-trigger{display:none}.nav{height:70px}.hero-grid{min-height:0}.hero-copy:before{display:none}.hero h1{font-size:clamp(4.6rem,15vw,7rem)}.reactor-wrap{min-height:0;padding:35px 0 28px}.reactor-orbit{width:min(92vw,520px)}.reactor-card{width:100%;aspect-ratio:1/1}.reactor-modebar{top:55px}.reactor-modebar button{padding:6px 7px;font-size:.43rem}.reactor-svg,.armor-svg,.ai-svg{width:88%;height:82%}.reactor-telemetry{left:18px;right:18px;bottom:58px;font-size:.37rem}.reactor-bottom{left:18px;right:18px;bottom:16px}.hud.hud-a{top:4%;left:-4px}.hud.hud-b{right:-4px;bottom:1%}.hud small{font-size:.44rem}.hud b{font-size:1rem}.system-dialog{max-height:88vh}.command-heading{padding:23px 19px 14px}.command-input-wrap{margin:0 19px 14px}.command-list{padding:0 11px 13px}.command-item{grid-template-columns:31px minmax(0,1fr) auto;padding:10px;gap:9px}.command-icon{width:31px;height:31px}.blueprint-content{padding:22px 18px}.blueprint-flow{gap:6px}.blueprint-node{flex-basis:95px}.cursor-orb{display:none}}
+@media(max-width:460px){.hero{padding-top:27px}.hero h1{font-size:clamp(4rem,15vw,5.6rem)}.reactor-wrap{padding-inline:4px}.reactor-modebar{gap:1px;padding:3px}.reactor-modebar button{font-size:.38rem;padding:6px}.reactor-telemetry{gap:4px;bottom:52px;font-size:.34rem}.reactor-bottom{font-size:.42rem}.hud.hud-a{top:1%;left:0}.hud.hud-b{right:0;bottom:-2%}.blueprint-stats{grid-template-columns:1fr 1fr}.blueprint-stats div:last-child{grid-column:1/-1}.blueprint-node{flex-basis:100%}.dialog-foot{font-size:.42rem}.command-item kbd{display:none}.boot-sigil{width:134px;height:134px}}
+@media(prefers-reduced-motion:reduce){.boot-screen{display:none!important}.boot-ring,.boot-core,.boot-meter i,.helmet-eyes,.ai-orbits,.hud,.reactor-orbit,.cursor-orb{animation:none!important}.reactor-card,.project,.cap-card,.process-card,.experience-card,.cert-card,.repo-card{transition:none!important;transform:none!important}}
+
 </style>
 </head>
 <body>
 <div id="progress"></div>
 <canvas id="particles" aria-hidden="true"></canvas>
+<div class="boot-screen" id="bootScreen" aria-label="Stark Systems boot sequence">
+  <div class="boot-sigil"><span class="boot-ring ring-a"></span><span class="boot-ring ring-b"></span><span class="boot-ring ring-c"></span><span class="boot-core"></span><b>HK</b></div>
+  <div class="boot-copy mono"><span>STARK INDUSTRIES // PERSONAL LAB</span><strong>INITIALIZING <em>J.A.R.V.I.S.</em></strong><div class="boot-meter"><i></i></div><small>LOADING ENGINEERING INTERFACE <span id="bootPercent">00%</span></small></div>
+  <button class="boot-skip mono" id="skipBoot">SKIP INTRO ↗</button>
+</div>
+<div class="cursor-orb" id="cursorOrb" aria-hidden="true"><i></i><b></b></div>
 <div class="nav-shell"><nav class="nav wrap" aria-label="Main navigation">
 <a class="brand" href="#home"><span class="brand-mark">HK</span><span>HEMANTH KUMAR<small>STARK SYSTEMS / AI & SOFTWARE</small></span></a>
 <div class="nav-links" id="navLinks"><a href="#work">Projects</a><a href="#capabilities">Capabilities</a><a href="#process">Approach</a><a href="#experience">Experience</a><a href="#journey">Journey</a><a href="#certifications">Certifications</a></div>
-<div class="nav-right"><span class="live"><i></i> Systems online</span><a class="btn gold" href="#contact">Initialize contact ↗</a><button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button></div>
+<div class="nav-right"><span class="live"><i></i> Systems online</span><button class="btn command-trigger" id="commandTrigger" type="button" aria-haspopup="dialog"><span>⌘</span> J.A.R.V.I.S. <kbd>CTRL K</kbd></button><a class="btn gold contact-shortcut" href="#contact">Initialize contact ↗</a><button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button></div>
 </nav></div>
 <main id="home">
 <section class="hero wrap">
@@ -113,6 +301,11 @@ footer{border-top:1px solid #252d37;padding:25px 0;color:#7d8996;font:500 .55rem
 <div class="hud hud-b"><small>AI SUBSYSTEM</small><b>ONLINE</b><small>TOOLS / RAG / EVAL</small></div>
 <div class="reactor-card">
 <div class="reactor-top mono"><strong>STARK INDUSTRIES / R&D</strong><span>MK—I // CORE ASSEMBLY</span></div>
+<div class="reactor-modebar" role="group" aria-label="Reactor display mode">
+  <button type="button" data-reactor-mode="reactor" class="active" aria-pressed="true">01 / CORE</button>
+  <button type="button" data-reactor-mode="armor" aria-pressed="false">02 / ARMOR</button>
+  <button type="button" data-reactor-mode="ai" aria-pressed="false">03 / J.A.R.V.I.S.</button>
+</div>
 <svg class="reactor-svg" viewBox="0 0 500 500" role="img" aria-label="Original animated arc reactor-inspired technical illustration">
 <defs><radialGradient id="coreGlow"><stop offset="0" stop-color="#d8ffff" stop-opacity=".9"/><stop offset=".23" stop-color="#7be7f3" stop-opacity=".65"/><stop offset=".57" stop-color="#e7b866" stop-opacity=".16"/><stop offset="1" stop-color="#080a10" stop-opacity="0"/></radialGradient><linearGradient id="goldMetal"><stop stop-color="#76512b"/><stop offset=".4" stop-color="#ffdf98"/><stop offset=".62" stop-color="#b17d3f"/><stop offset="1" stop-color="#4c3620"/></linearGradient><linearGradient id="cyanMetal"><stop stop-color="#2b8291"/><stop offset=".5" stop-color="#c7ffff"/><stop offset="1" stop-color="#2f99a5"/></linearGradient></defs>
 <circle cx="250" cy="250" r="224" fill="url(#coreGlow)"/>
@@ -125,6 +318,44 @@ footer{border-top:1px solid #252d37;padding:25px 0;color:#7d8996;font:500 .55rem
 <g fill="#e7b866"><circle cx="250" cy="54" r="4"/><circle cx="446" cy="250" r="4"/><circle cx="250" cy="446" r="4"/><circle cx="54" cy="250" r="4"/></g>
 <g fill="#8d9eaa" font-family="DM Mono,monospace" font-size="9" letter-spacing="1.4"><text x="250" y="18" text-anchor="middle">STARK / REACTOR ARRAY</text><text x="250" y="491" text-anchor="middle">POWER SYSTEMS · ITERATION 001</text></g>
 </svg>
+<svg class="armor-svg" viewBox="0 0 500 500" role="img" aria-label="Original red and gold powered armor helmet concept">
+  <defs>
+    <linearGradient id="armorRed" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff7566"/><stop offset=".28" stop-color="#e73b30"/><stop offset=".67" stop-color="#8c1c1c"/><stop offset="1" stop-color="#3b1116"/></linearGradient>
+    <linearGradient id="armorGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1b4"/><stop offset=".34" stop-color="#e8b65f"/><stop offset=".7" stop-color="#9c6531"/><stop offset="1" stop-color="#f6d88c"/></linearGradient>
+    <linearGradient id="visorGlow"><stop stop-color="#6cecff"/><stop offset=".5" stop-color="#e6ffff"/><stop offset="1" stop-color="#43a8dc"/></linearGradient>
+    <radialGradient id="helmetAura"><stop stop-color="#e7b866" stop-opacity=".32"/><stop offset="1" stop-color="#090b10" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="250" cy="250" r="220" fill="url(#helmetAura)"/>
+  <g fill="none" stroke="#e7b866" stroke-opacity=".3"><circle cx="250" cy="250" r="205" stroke-dasharray="3 11"/><circle cx="250" cy="250" r="185"/><path d="M250 22V88M250 412V478M22 250H88M412 250H478"/></g>
+  <g class="helmet-shell" stroke="#f4ca7c" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M250 54 319 70 375 111 405 179 394 264 367 337 318 404 250 445 182 404 133 337 106 264 95 179 125 111 181 70Z" fill="url(#armorRed)"/>
+    <path d="M250 72 313 89 354 127 378 181 367 251 343 318 307 375 250 418 193 375 157 318 133 251 122 181 146 127 187 89Z" fill="#47191c" stroke="#63312b"/>
+    <path d="M187 88 250 72 313 88 342 133 329 185 285 210 250 194 215 210 171 185 158 133Z" fill="url(#armorGold)"/>
+    <path d="M158 133 171 185 215 210 205 267 169 290 143 247 133 181Z" fill="url(#armorRed)"/>
+    <path d="M342 133 329 185 285 210 295 267 331 290 357 247 367 181Z" fill="url(#armorRed)"/>
+    <path d="M187 198 226 218 215 250 173 255 146 232Z" fill="#5c2324"/>
+    <path d="M313 198 274 218 285 250 327 255 354 232Z" fill="#5c2324"/>
+    <path d="M174 271 215 264 237 295 224 354 250 388 276 354 263 295 285 264 326 271 309 327 294 376 250 407 206 376 191 327Z" fill="url(#armorGold)"/>
+    <path d="M216 268 237 295 224 354 250 388 276 354 263 295 284 268 273 329 250 354 227 329Z" fill="#a76d38"/>
+    <path d="M160 298 191 327 206 376 182 351 162 325Z" fill="#efaa4e"/>
+    <path d="M340 298 309 327 294 376 318 351 338 325Z" fill="#efaa4e"/>
+    <path d="M188 95 147 132 132 179 111 173 126 116 175 78Z" fill="#f3c773"/>
+    <path d="M312 95 353 132 368 179 389 173 374 116 325 78Z" fill="#f3c773"/>
+  </g>
+  <g class="helmet-eyes"><path d="M150 218 207 222 221 244 172 250 143 237Z" fill="url(#visorGlow)" stroke="#e6ffff" stroke-width="2"/><path d="M350 218 293 222 279 244 328 250 357 237Z" fill="url(#visorGlow)" stroke="#e6ffff" stroke-width="2"/><path d="M145 235 210 235M355 235 290 235" stroke="#fff" stroke-opacity=".8" stroke-width="2"/></g>
+  <g fill="none" stroke="#e9c47f" stroke-width="1.4" stroke-opacity=".75"><path d="M250 92V174M250 388V425M113 193 136 199M387 193 364 199M150 311 176 328M350 311 324 328"/><path d="M224 178 250 193 276 178M221 260 250 276 279 260"/></g>
+  <g fill="#7be7f3"><circle cx="130" cy="181" r="3"/><circle cx="370" cy="181" r="3"/><circle cx="250" cy="405" r="3"/></g>
+</svg>
+<svg class="ai-svg" viewBox="0 0 500 500" role="img" aria-label="Original JARVIS-inspired AI system node schematic">
+  <defs><radialGradient id="aiGlow"><stop stop-color="#7be7f3" stop-opacity=".7"/><stop offset="1" stop-color="#7be7f3" stop-opacity="0"/></radialGradient></defs>
+  <circle cx="250" cy="250" r="208" fill="url(#aiGlow)" opacity=".55"/>
+  <g class="ai-orbits" fill="none" stroke="#7be7f3" stroke-opacity=".65"><circle cx="250" cy="250" r="174" stroke-dasharray="2 12"/><circle cx="250" cy="250" r="142"/><ellipse cx="250" cy="250" rx="78" ry="174" transform="rotate(60 250 250)"/><ellipse cx="250" cy="250" rx="78" ry="174" transform="rotate(-60 250 250)"/><path d="M250 38V462M38 250H462M100 100 400 400M400 100 100 400"/></g>
+  <g stroke="#7be7f3" stroke-width="2" fill="#0b151d"><path d="M250 148 326 193 326 280 250 324 174 280 174 193Z"/><path d="M250 178 300 207 300 266 250 295 200 266 200 207Z" fill="#173c44"/></g>
+  <g fill="none" stroke="#e7b866" stroke-width="2.5"><path d="M250 110V148M250 324V363M110 250H174M326 250H390M151 151 196 196M349 151 304 196M151 349 196 304M349 349 304 304"/></g>
+  <g class="ai-node" fill="#e7b866" stroke="#fff0c5" stroke-width="1.5"><circle cx="250" cy="110" r="7"/><circle cx="390" cy="250" r="7"/><circle cx="250" cy="363" r="7"/><circle cx="110" cy="250" r="7"/><circle cx="151" cy="151" r="5"/><circle cx="349" cy="151" r="5"/><circle cx="151" cy="349" r="5"/><circle cx="349" cy="349" r="5"/></g>
+  <circle cx="250" cy="250" r="58" fill="#09131a" stroke="#7be7f3" stroke-width="2"/><circle cx="250" cy="250" r="48" fill="none" stroke="#7be7f3" stroke-dasharray="3 6"/><text x="250" y="255" text-anchor="middle" fill="#e7ffff" font-family="DM Mono,monospace" font-size="20" letter-spacing="3">AI</text><text x="250" y="278" text-anchor="middle" fill="#7be7f3" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.7">HEMANTH</text>
+</svg>
+<div class="reactor-telemetry mono"><span>THERMAL <b id="thermalReadout">34.2°C</b></span><span>J.A.R.V.I.S. <b class="cyan">CONNECTED</b></span><span>LOCAL TIME <b id="localTime">--:--:--</b></span></div>
 <div class="reactor-bottom mono"><span>CORE STABILITY<br><b>Nominal</b></span><span>DESIGNATION<br><b>HEMANTH / MK—AI</b></span></div>
 </div>
 </div>
@@ -135,12 +366,12 @@ footer{border-top:1px solid #252d37;padding:25px 0;color:#7d8996;font:500 .55rem
 <div class="section-head reveal"><div><div class="kicker mono"><b>01</b> PROJECTS / SELECTED BUILDS</div><h2>Proof of <span>build.</span></h2></div><p class="section-intro">A lab of AI products, development tools, and full-stack systems. Each build explores a practical problem with a focus on workflow, reliability, and usable outcomes.</p></div>
 <div class="project-tools reveal"><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All builds · 06</button><button class="filter" data-filter="ai" aria-pressed="false">AI / GenAI</button><button class="filter" data-filter="web" aria-pressed="false">Product apps</button><button class="filter" data-filter="tools" aria-pressed="false">Engineering tools</button></div><span class="count" id="count">06 RECORDS</span></div>
 <div class="project-grid" id="projectGrid">
-<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 001"><div class="diagram"><div class="mock-top"><span>VERITY // RESEARCH</span><span>MULTIMODAL</span></div><div class="mock-core">V/AI</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Applied AI / Agent platform</span><span>001—006</span></div><h3>Verity</h3><p>Enterprise-oriented multimodal research and action agent focused on retrieval, tool orchestration, and controlled execution.</p><ul class="project-points"><li>Hybrid retrieval patterns and multimodal ingestion for documents, tables, and images.</li><li>MCP-oriented tool integration, guarded SQL access, and approval gates for sensitive actions.</li><li>Citation/provenance-first responses with evaluation and regression-test foundations.</li></ul><div class="tags"><span>RAG</span><span>AI Agents</span><span>MCP</span><span>Evaluation</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div></div></article>
-<article class="project reveal" data-category="ai web"><div class="project-art" data-code="PROJECT / 002"><div class="diagram"><div class="mock-top"><span>APPLYRIGHT</span><span>CAREER AI</span></div><div class="mock-core">AR</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Recruitment / AI product</span><span>002—006</span></div><h3>ApplyRight</h3><p>A recruitment and career platform supporting candidate and recruiter workflows with AI-assisted analysis.</p><ul class="project-points"><li>Candidate profiles, job listings, applications, and recruiter-side applicant views.</li><li>Gemini-backed resume insight, skill-gap analysis, job matching, and interview preparation.</li><li>FastAPI API layer with role-based access and JWT-oriented authentication.</li></ul><div class="tags"><span>React</span><span>FastAPI</span><span>Gemini</span><span>JWT</span></div><div class="project-links"><a href="https://applyright-puce.vercel.app/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Source repository ↗</a></div></div></article>
-<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 003"><div class="diagram"><div class="mock-top"><span>PARCELPILOT</span><span>SUPPORT AGENT</span></div><div class="mock-core">PP</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Agent workflow / Support</span><span>003—006</span></div><h3>ParcelPilot AI Agent</h3><p>Evidence-first support assistant for order, parcel, and customer-policy questions.</p><ul class="project-points"><li>Retrieves account/order records and relevant operational policy documents.</li><li>Prioritizes authoritative sources and keeps account-scoped context separate.</li><li>Uses explicit confirmation gates for actions that may change system state.</li></ul><div class="tags"><span>Python</span><span>LLM tools</span><span>Retrieval</span></div><div class="project-links"><a href="https://parcelpilot-ai-agent.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Source repository ↗</a></div></div></article>
-<article class="project reveal" data-category="ai tools"><div class="project-art" data-code="PROJECT / 004"><div class="diagram"><div class="mock-top"><span>SIGNAL LAB</span><span>MODEL QUALITY</span></div><div class="mock-core">EVAL</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">AI reliability / Tooling</span><span>004—006</span></div><h3>LLM Evaluation Lab</h3><p>An evaluation workspace for testing LLM applications with measurable quality gates.</p><ul class="project-points"><li>Workflow and dataset versioning with structured evaluation cases.</li><li>Scorecards and regression checks for groundedness, tool output, and injection resistance.</li><li>Human review for uncertain cases with latency and estimated-cost tracking.</li></ul><div class="tags"><span>LLMs</span><span>Regression tests</span><span>Release gates</span></div><div class="project-links"><a href="https://llmevallab-klar2hzi.manus.space/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Source repository ↗</a></div></div></article>
-<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 005"><div class="diagram"><div class="mock-top"><span>SUPPORT CRM</span><span>OPERATIONS</span></div><div class="mock-core">CRM</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Business software</span><span>005—006</span></div><h3>CRM System</h3><p>A lightweight support CRM built around a practical ticket-management workflow.</p><ul class="project-points"><li>Ticket creation, status tracking, assignment, and operational CRUD flows.</li><li>React/Vite frontend backed by Express and SQLite.</li><li>Deployment-oriented setup and a simple interface for support operations.</li></ul><div class="tags"><span>React</span><span>Express</span><span>SQLite</span></div><div class="project-links"><a href="https://crm-system-nkaj.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Source repository ↗</a></div></div></article>
-<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 006"><div class="diagram"><div class="mock-top"><span>KINDER OS</span><span>SCHOOL PLATFORM</span></div><div class="mock-core">K/OS</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Education / Full stack</span><span>006—006</span></div><h3>Kinder Garden Schools OS</h3><p>A school-facing platform designed to organize admissions and parent-oriented information.</p><ul class="project-points"><li>Admissions, galleries, fees, webinars, and school information sections.</li><li>Next.js frontend with Express API and MongoDB persistence.</li><li>JWT and password hashing foundations for protected workflows.</li></ul><div class="tags"><span>Next.js</span><span>Express</span><span>MongoDB</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div></div></article>
+<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 001"><div class="diagram"><div class="mock-top"><span>VERITY // RESEARCH</span><span>MULTIMODAL</span></div><div class="mock-core">V/AI</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Applied AI / Agent platform</span><span>001—006</span></div><h3>Verity</h3><p>Enterprise-oriented multimodal research and action agent focused on retrieval, tool orchestration, and controlled execution.</p><ul class="project-points"><li>Hybrid retrieval patterns and multimodal ingestion for documents, tables, and images.</li><li>MCP-oriented tool integration, guarded SQL access, and approval gates for sensitive actions.</li><li>Citation/provenance-first responses with evaluation and regression-test foundations.</li></ul><div class="tags"><span>RAG</span><span>AI Agents</span><span>MCP</span><span>Evaluation</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="0" aria-label="Inspect engineering blueprint for project 1"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai web"><div class="project-art" data-code="PROJECT / 002"><div class="diagram"><div class="mock-top"><span>APPLYRIGHT</span><span>CAREER AI</span></div><div class="mock-core">AR</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Recruitment / AI product</span><span>002—006</span></div><h3>ApplyRight</h3><p>A recruitment and career platform supporting candidate and recruiter workflows with AI-assisted analysis.</p><ul class="project-points"><li>Candidate profiles, job listings, applications, and recruiter-side applicant views.</li><li>Gemini-backed resume insight, skill-gap analysis, job matching, and interview preparation.</li><li>FastAPI API layer with role-based access and JWT-oriented authentication.</li></ul><div class="tags"><span>React</span><span>FastAPI</span><span>Gemini</span><span>JWT</span></div><div class="project-links"><a href="https://applyright-puce.vercel.app/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="1" aria-label="Inspect engineering blueprint for project 2"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai"><div class="project-art" data-code="PROJECT / 003"><div class="diagram"><div class="mock-top"><span>PARCELPILOT</span><span>SUPPORT AGENT</span></div><div class="mock-core">PP</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Agent workflow / Support</span><span>003—006</span></div><h3>ParcelPilot AI Agent</h3><p>Evidence-first support assistant for order, parcel, and customer-policy questions.</p><ul class="project-points"><li>Retrieves account/order records and relevant operational policy documents.</li><li>Prioritizes authoritative sources and keeps account-scoped context separate.</li><li>Uses explicit confirmation gates for actions that may change system state.</li></ul><div class="tags"><span>Python</span><span>LLM tools</span><span>Retrieval</span></div><div class="project-links"><a href="https://parcelpilot-ai-agent.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="2" aria-label="Inspect engineering blueprint for project 3"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="ai tools"><div class="project-art" data-code="PROJECT / 004"><div class="diagram"><div class="mock-top"><span>SIGNAL LAB</span><span>MODEL QUALITY</span></div><div class="mock-core">EVAL</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">AI reliability / Tooling</span><span>004—006</span></div><h3>LLM Evaluation Lab</h3><p>An evaluation workspace for testing LLM applications with measurable quality gates.</p><ul class="project-points"><li>Workflow and dataset versioning with structured evaluation cases.</li><li>Scorecards and regression checks for groundedness, tool output, and injection resistance.</li><li>Human review for uncertain cases with latency and estimated-cost tracking.</li></ul><div class="tags"><span>LLMs</span><span>Regression tests</span><span>Release gates</span></div><div class="project-links"><a href="https://llmevallab-klar2hzi.manus.space/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="3" aria-label="Inspect engineering blueprint for project 4"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 005"><div class="diagram"><div class="mock-top"><span>SUPPORT CRM</span><span>OPERATIONS</span></div><div class="mock-core">CRM</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Business software</span><span>005—006</span></div><h3>CRM System</h3><p>A lightweight support CRM built around a practical ticket-management workflow.</p><ul class="project-points"><li>Ticket creation, status tracking, assignment, and operational CRUD flows.</li><li>React/Vite frontend backed by Express and SQLite.</li><li>Deployment-oriented setup and a simple interface for support operations.</li></ul><div class="tags"><span>React</span><span>Express</span><span>SQLite</span></div><div class="project-links"><a href="https://crm-system-nkaj.onrender.com/" target="_blank" rel="noreferrer">Live product ↗</a><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Source repository ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="4" aria-label="Inspect engineering blueprint for project 5"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
+<article class="project reveal" data-category="web"><div class="project-art" data-code="PROJECT / 006"><div class="diagram"><div class="mock-top"><span>KINDER OS</span><span>SCHOOL PLATFORM</span></div><div class="mock-core">K/OS</div><div class="mock-lines"><i></i><i></i><i></i></div></div></div><div class="project-body"><div class="project-meta"><span class="type">Education / Full stack</span><span>006—006</span></div><h3>Kinder Garden Schools OS</h3><p>A school-facing platform designed to organize admissions and parent-oriented information.</p><ul class="project-points"><li>Admissions, galleries, fees, webinars, and school information sections.</li><li>Next.js frontend with Express API and MongoDB persistence.</li><li>JWT and password hashing foundations for protected workflows.</li></ul><div class="tags"><span>Next.js</span><span>Express</span><span>MongoDB</span></div><div class="project-links"><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Source repository ↗</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">More builds ↗</a></div><button type="button" class="blueprint-trigger mono" data-blueprint="5" aria-label="Inspect engineering blueprint for project 6"><span>◈</span> INSPECT BLUEPRINT <b>↗</b></button></div></article>
 </div>
 <details class="archive reveal"><summary><div><strong>Engineering archive / all repositories</strong><p class="muted" style="margin:5px 0 0;font-size:.77rem">Explore the broader trail of experiments, platforms, and practice repositories.</p></div><span>21 REPOS · OPEN ARCHIVE +</span></summary><div class="repo-grid">
 <article class="repo-card"><h4>Hemanth Kumar — Profile README</h4><p>Personal profile and overview</p><a href="https://github.com/hemanthkumar1012/hemanthkumar1012" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Cricket Tournament Management System</h4><p>Tournament workflow project</p><a href="https://github.com/hemanthkumar1012/Cricket-Tournament-Management-System-" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Portfolio Website</h4><p>Personal portfolio source</p><a href="https://github.com/hemanthkumar1012/Hemanth-kumar-portfolio" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot AI Support Agent</h4><p>Evidence-first support agent</p><a href="https://github.com/hemanthkumar1012/parcelpilot-ai-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ApplyRight</h4><p>AI recruitment platform</p><a href="https://github.com/hemanthkumar1012/hireai" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LeetCode Solutions</h4><p>Algorithm practice archive</p><a href="https://github.com/hemanthkumar1012/leetcode-solutions" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot</h4><p>Logistics workflows</p><a href="https://github.com/hemanthkumar1012/ParcelPilot" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Aegis</h4><p>Runtime security control plane</p><a href="https://github.com/hemanthkumar1012/aegis" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Platform</h4><p>Logistics product platform</p><a href="https://github.com/hemanthkumar1012/parcelpilot-platform" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLD Practice Lab</h4><p>Low-level design exercises</p><a href="https://github.com/hemanthkumar1012/lld-practice-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CodeAlpha Tasks</h4><p>Internship project collection</p><a href="https://github.com/hemanthkumar1012/codealpha_tasks" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>AgentGuard</h4><p>Runtime security for AI agents</p><a href="https://github.com/hemanthkumar1012/agentguard" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>LLM Evaluation Lab</h4><p>LLM testing and release evaluation</p><a href="https://github.com/hemanthkumar1012/llm-evaluation-lab" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>ParcelPilot Hiver SDE Intern</h4><p>Support dataset / agent task</p><a href="https://github.com/hemanthkumar1012/parcelpilot-hiver-sde-intern" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>CRM System</h4><p>Customer-support CRM</p><a href="https://github.com/hemanthkumar1012/crm-system" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Company Intranet Portal</h4><p>Internal company workflow portal</p><a href="https://github.com/hemanthkumar1012/company-intranet-portal" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Verity Enterprise Agent</h4><p>Multimodal research and action agent</p><a href="https://github.com/hemanthkumar1012/verity-enterprise-agent" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Invexom Cybersecurity Assessment</h4><p>Cybersecurity awareness assessment</p><a href="https://github.com/hemanthkumar1012/invexom-cybersecurity-awareness-assessment" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>SevaSetu Bharat Agentic</h4><p>Citizen action agent concept</p><a href="https://github.com/hemanthkumar1012/sevasetu-bharat-agentic-2026" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>Kinder Garden Schools OS</h4><p>School information platform</p><a href="https://github.com/hemanthkumar1012/kinder-garden-schools-os" target="_blank" rel="noreferrer">Inspect repository ↗</a></article><article class="repo-card"><h4>finch-cactus-plum-kite</h4><p>Repository in profile archive</p><a href="https://github.com/hemanthkumar1012/finch-cactus-plum-kite" target="_blank" rel="noreferrer">Inspect repository ↗</a></article>
@@ -181,6 +412,18 @@ footer{border-top:1px solid #252d37;padding:25px 0;color:#7d8996;font:500 .55rem
 </div></div></section>
 <section class="section" id="contact"><div class="wrap"><div class="contact-panel reveal"><div><div class="kicker mono"><b>07</b> OPEN CHANNEL / CONTACT</div><h2>Let's build the <em>future.</em></h2><p>Open to AI engineering and software development opportunities where I can contribute to Python systems, AI-assisted workflows, reliable APIs, and useful products.</p><div class="social-row"><a class="social-chip" href="https://www.linkedin.com/in/v-hemanth-kumar-yadav/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="social-chip" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub ↗</a><a class="social-chip" href="https://leetcode.com/u/hemanthkumar1012/" target="_blank" rel="noreferrer">LeetCode ↗</a><a class="social-chip" href="mailto:hemanthkumaryadav13@gmail.com">Email ↗</a><a class="social-chip" href="tel:+917075979460">Phone ↗</a></div></div><div class="contact-actions"><a class="btn gold" href="mailto:hemanthkumaryadav13@gmail.com">Send a message ↗</a><a class="btn" href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GitHub profile ↗</a></div></div></div></section>
 </main>
+<dialog class="system-dialog command-dialog" id="commandDialog" aria-labelledby="commandTitle">
+  <div class="dialog-top mono"><span><i class="live-dot"></i> J.A.R.V.I.S. / COMMAND INTERFACE</span><button type="button" class="dialog-close" data-close-dialog aria-label="Close command interface">ESC ✕</button></div>
+  <div class="command-heading"><span class="mono">STARK SYSTEMS TERMINAL</span><h2 id="commandTitle">What are we <em>building?</em></h2><p>Choose a destination or run a local interface command.</p></div>
+  <label class="command-input-wrap"><span aria-hidden="true">⌕</span><input id="commandInput" type="search" autocomplete="off" placeholder="Search projects, sections, commands…" aria-label="Search command list"><kbd>↵</kbd></label>
+  <div class="command-list" id="commandList" role="listbox" aria-label="Available commands"></div>
+  <div class="dialog-foot mono"><span>↑↓ SELECT / ENTER EXECUTE</span><span>ESC CLOSE</span></div>
+</dialog>
+<dialog class="system-dialog blueprint-dialog" id="blueprintDialog" aria-labelledby="blueprintTitle">
+  <div class="dialog-top mono"><span><i class="live-dot"></i> ENGINEERING INSPECTOR / CASE FILE</span><button type="button" class="dialog-close" data-close-dialog aria-label="Close blueprint">ESC ✕</button></div>
+  <div class="blueprint-content" id="blueprintContent"></div>
+</dialog>
+<div class="toast mono" id="systemToast" role="status" aria-live="polite"></div>
 <footer><div class="wrap footer-inner"><span>© 2026 HEMANTH KUMAR / STARK SYSTEMS</span><div class="footer-social"><a href="#home">BACK TO TOP ↑</a><a href="https://github.com/hemanthkumar1012" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="https://www.linkedin.com/in/v-hemanth-kumar-yadav/" target="_blank" rel="noreferrer">LINKEDIN ↗</a></div><span>BUILT TO EVOLVE / MK—AI</span></div></footer>
 <script>
 (()=>{
@@ -198,12 +441,145 @@ filters.forEach(button=>button.addEventListener('click',()=>{const filter=button
 const links=[...nav.querySelectorAll('a')];if('IntersectionObserver'in window){const sectionObserver=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){links.forEach(link=>link.classList.toggle('active',link.hash==='#'+item.target.id))}}),{rootMargin:'-25% 0px -65% 0px'});document.querySelectorAll('main section[id]').forEach(s=>sectionObserver.observe(s))}
 const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');let w=0,h=0,nodes=[],frame=0,pointer={x:-1000,y:-1000},dpr=Math.min(devicePixelRatio||1,1.7);
 function resize(){w=innerWidth;h=innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);nodes=Array.from({length:Math.min(90,Math.floor(w/15))},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:Math.random()*1.35+.4}))}
-function draw(){if(reduce||document.hidden)return;ctx.clearRect(0,0,w,h);for(let i=0;i<nodes.length;i++){let p=nodes[i];p.x+=p.vx;p.y+=p.vy;if(p.x<-10)p.x=w+10;if(p.x>w+10)p.x=-10;if(p.y<-10)p.y=h+10;if(p.y>h+10)p.y=-10;
+function draw(){if(reduce)return;if(document.hidden){frame=0;return;}ctx.clearRect(0,0,w,h);for(let i=0;i<nodes.length;i++){let p=nodes[i];p.x+=p.vx;p.y+=p.vy;if(p.x<-10)p.x=w+10;if(p.x>w+10)p.x=-10;if(p.y<-10)p.y=h+10;if(p.y>h+10)p.y=-10;
 for(let j=i+1;j<nodes.length;j++){let q=nodes[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.hypot(dx,dy);if(d<115){ctx.strokeStyle='rgba(231,184,102,'+(1-d/115)*.13+')';ctx.lineWidth=.65;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke()}}
 let pd=Math.hypot(p.x-pointer.x,p.y-pointer.y);if(pd<145){ctx.strokeStyle='rgba(123,231,243,'+(1-pd/145)*.35+')';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(pointer.x,pointer.y);ctx.stroke()}
 ctx.fillStyle='rgba(231,184,102,.5)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}frame=requestAnimationFrame(draw)}
 if(ctx){resize();if(!reduce)draw();addEventListener('resize',resize,{passive:true});addEventListener('pointermove',e=>{pointer.x=e.clientX;pointer.y=e.clientY},{passive:true});document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!reduce&&!frame)draw()})}
 if(!reduce){const reactor=document.querySelector('.reactor-wrap');reactor.addEventListener('pointermove',e=>{const r=reactor.getBoundingClientRect();reactor.style.setProperty('--rx',((e.clientX-r.left)/r.width-.5).toFixed(3));reactor.style.setProperty('--ry',((e.clientY-r.top)/r.height-.5).toFixed(3));});reactor.addEventListener('pointerleave',()=>{reactor.style.setProperty('--rx',0);reactor.style.setProperty('--ry',0)});}
+
+
+  // MK-X / Boot sequence, local telemetry and interactive display selector.
+  const bootScreen=document.getElementById('bootScreen');
+  const bootPercent=document.getElementById('bootPercent');
+  const skipBoot=document.getElementById('skipBoot');
+  const dismissBoot=()=>{if(bootScreen)bootScreen.classList.add('done')};
+  if(reduce) dismissBoot();
+  else {
+    let progress=0;
+    const bootInterval=setInterval(()=>{progress=Math.min(100,progress+Math.floor(Math.random()*17+8));if(bootPercent)bootPercent.textContent=String(progress).padStart(2,'0')+'%';if(progress>=100)clearInterval(bootInterval)},130);
+    setTimeout(dismissBoot,1850);
+    skipBoot?.addEventListener('click',dismissBoot);
+  }
+  const timeReadout=document.getElementById('localTime');
+  const thermalReadout=document.getElementById('thermalReadout');
+  function updateTelemetry(){
+    if(timeReadout)timeReadout.textContent=new Intl.DateTimeFormat(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date());
+    if(thermalReadout)thermalReadout.textContent=(34.2+Math.sin(Date.now()/5200)*1.8).toFixed(1)+'°C';
+  }
+  updateTelemetry();setInterval(updateTelemetry,1000);
+
+  const reactorCard=document.querySelector('.reactor-card');
+  const modeButtons=[...document.querySelectorAll('[data-reactor-mode]')];
+  const topLabel=reactorCard?.querySelector('.reactor-top span');
+  const modeNames={reactor:'MK—I // CORE ASSEMBLY',armor:'MK—VII // ARMOR SCAN',ai:'J.A.R.V.I.S. // NODE MAP'};
+  function setReactorMode(mode,notify=false){
+    if(!reactorCard)return;
+    reactorCard.dataset.mode=mode;
+    modeButtons.forEach(btn=>{const active=btn.dataset.reactorMode===mode;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
+    if(topLabel)topLabel.textContent=modeNames[mode]||modeNames.reactor;
+    if(notify)showToast('DISPLAY MODE UPDATED / '+mode.toUpperCase());
+  }
+  modeButtons.forEach(btn=>btn.addEventListener('click',()=>setReactorMode(btn.dataset.reactorMode,true)));
+  const reactorWrap=document.getElementById('reactor');
+  if(reactorCard && !reduce && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    reactorWrap.addEventListener('pointermove',event=>{
+      const r=reactorWrap.getBoundingClientRect(),x=(event.clientX-r.left)/r.width,y=(event.clientY-r.top)/r.height;
+      reactorCard.style.setProperty('--tilt-x',((x-.5)*5).toFixed(2)+'deg');
+      reactorCard.style.setProperty('--tilt-y',((.5-y)*4).toFixed(2)+'deg');
+      reactorCard.style.setProperty('--light-x',(x*100).toFixed(1)+'%');
+      reactorCard.style.setProperty('--light-y',(y*100).toFixed(1)+'%');
+    });
+    reactorWrap.addEventListener('pointerleave',()=>{reactorCard.style.setProperty('--tilt-x','0deg');reactorCard.style.setProperty('--tilt-y','0deg');reactorCard.style.setProperty('--light-x','50%');reactorCard.style.setProperty('--light-y','45%')});
+  }
+
+  const toast=document.getElementById('systemToast');
+  let toastTimer;
+  function showToast(message){
+    if(!toast)return;
+    toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2300);
+  }
+
+  // Each blueprint is a practical architecture sketch, not a claim of production completeness.
+  const blueprints=[
+    {code:'VERITY / 001',title:'Enterprise Multimodal Research Agent',description:'A research-and-action workflow that retrieves evidence across documents and structured data, then routes selected operations through controlled tools.',layers:['User query','Query planner','Hybrid retrieval','Tool safety gate','Cited response'],stack:['Python','Retrieval','MCP','SQL safety','Evaluation'],metrics:[['PATTERN','Evidence-first'],['CONTROL','Approval gates'],['FOCUS','Traceability']],notes:['Hybrid keyword/vector retrieval and multimodal ingestion for source material.','Tool access uses guarded interfaces; sensitive actions should pass explicit approval checks.','Citations, provenance, evaluation cases and regression checks support trust and iteration.'],repo:'https://github.com/hemanthkumar1012/verity-enterprise-agent'},
+    {code:'APPLYRIGHT / 002',title:'AI recruitment and career platform',description:'Candidate and recruiter flows connected to an AI-assisted resume analysis workflow.',layers:['Candidate profile','Resume parsing','Skill extraction','Job matching','Recruiter workflow'],stack:['React','FastAPI','Gemini','JWT','Role-based access'],metrics:[['PRODUCT','Recruitment'],['AI TASK','Matching'],['SECURITY','Role-aware']],notes:['Candidate profiles, job listings, applications and recruiter-side applicant views.','Gemini-assisted resume insight, skill-gap analysis, job matching and interview preparation.','FastAPI endpoints and role-oriented authorization make the core flow explicit.'],repo:'https://github.com/hemanthkumar1012/hireai'},
+    {code:'PARCELPILOT / 003',title:'Evidence-first customer-support agent',description:'An operational agent that retrieves parcel/account context and prioritizes trustworthy sources before composing answers.',layers:['Customer question','Account-scoped lookup','Policy retrieval','Source precedence','Answer / confirm'],stack:['Python','LLM tools','Document retrieval','APIs','Guardrails'],metrics:[['DOMAIN','Logistics'],['DESIGN','Source-first'],['ACTION','Confirm-gated']],notes:['Retrieves account/order records and relevant operational policy content.','Keeps account-scoped context separated and follows an explicit source hierarchy.','Uses confirmation gates before state-changing actions.'],repo:'https://github.com/hemanthkumar1012/parcelpilot-ai-agent'},
+    {code:'SIGNAL LAB / 004',title:'LLM Evaluation and Release Lab',description:'A test-and-review workspace focused on repeatable evaluation, regression checks and measurable release criteria for LLM workflows.',layers:['Dataset version','Run contract','Evaluation case','Scorecard / regression','Human review gate'],stack:['LLMs','Datasets','Scorecards','Regression testing','Observability'],metrics:[['FOCUS','Quality'],['GATE','Regression'],['REVIEW','Human-in-loop']],notes:['Versions workflow configurations and evaluation datasets.','Checks groundedness, tool-output correctness, refusal behavior and injection resistance.','Surfaces uncertain results for review and tracks latency/usage/cost signals.'],repo:'https://github.com/hemanthkumar1012/llm-evaluation-lab'},
+    {code:'CRM SYSTEM / 005',title:'Customer operations workspace',description:'A lightweight full-stack ticket workflow that organizes support requests and the core lifecycle around them.',layers:['React interface','Ticket API','Validation','SQLite store','Status workflow'],stack:['React','Vite','Express','SQLite','Render'],metrics:[['DOMAIN','Support ops'],['PATTERN','CRUD'],['STORAGE','SQLite']],notes:['Ticket creation, status tracking, assignment and core CRUD interactions.','React/Vite frontend paired with Express endpoints and SQLite persistence.','A compact deployable system aimed at a practical support workflow.'],repo:'https://github.com/hemanthkumar1012/crm-system'},
+    {code:'KINDER OS / 006',title:'School information platform',description:'A school-facing and parent-oriented platform organizing important school information and admission pathways.',layers:['Parent / visitor','Next.js pages','Express API','MongoDB','Protected workflows'],stack:['Next.js','Express','MongoDB','JWT','bcrypt'],metrics:[['DOMAIN','Education'],['APP','Full stack'],['DATA','MongoDB']],notes:['Admissions, galleries, fees, webinars and school-information sections.','Next.js frontend with Express API and MongoDB persistence.','Authentication and password-hashing foundations for protected workflows.'],repo:'https://github.com/hemanthkumar1012/kinder-garden-schools-os'}
+  ];
+  const blueprintDialog=document.getElementById('blueprintDialog');
+  const blueprintContent=document.getElementById('blueprintContent');
+  function openBlueprint(index){
+    const b=blueprints[index];if(!b||!blueprintDialog||!blueprintContent)return;
+    blueprintContent.innerHTML=
+      '<div class="blueprint-kicker mono">'+b.code+' / ARCHITECTURE MAP</div>'+
+      '<h2 class="blueprint-title" id="blueprintTitle">'+b.title+'</h2>'+
+      '<p class="blueprint-description">'+b.description+'</p>'+
+      '<div class="blueprint-stats">'+b.metrics.map(m=>'<div><small>'+m[0]+'</small><b>'+m[1]+'</b></div>').join('')+'</div>'+
+      '<div class="blueprint-section-label">REQUEST / DATA / CONTROL FLOW</div>'+
+      '<div class="blueprint-flow">'+b.layers.map((n,i)=>'<div class="blueprint-node"><span>STAGE '+String(i+1).padStart(2,'0')+'</span><strong>'+n+'</strong></div>').join('')+'</div>'+
+      '<div class="blueprint-section-label">ENGINEERING NOTES</div>'+
+      '<ul class="blueprint-bullets">'+b.notes.map(n=>'<li>'+n+'</li>').join('')+'</ul>'+
+      '<div class="blueprint-tags">'+b.stack.map(n=>'<span>'+n+'</span>').join('')+'</div>'+
+      '<div class="blueprint-actions"><a class="btn gold" href="'+b.repo+'" target="_blank" rel="noreferrer">Open source repository ↗</a><button class="btn" type="button" data-close-dialog>Return to lab ×</button></div>';
+    blueprintDialog.showModal();
+  }
+  document.querySelectorAll('.blueprint-trigger').forEach(button=>button.addEventListener('click',()=>openBlueprint(Number(button.dataset.blueprint))));
+  document.querySelectorAll('[data-close-dialog]').forEach(button=>button.addEventListener('click',()=>button.closest('dialog')?.close()));
+  [blueprintDialog,document.getElementById('commandDialog')].forEach(dialog=>dialog?.addEventListener('click',event=>{if(event.target===dialog)dialog.close()}));
+
+  // J.A.R.V.I.S command palette: navigate, inspect builds, or switch the visual subsystem.
+  const commandDialog=document.getElementById('commandDialog');
+  const commandInput=document.getElementById('commandInput');
+  const commandList=document.getElementById('commandList');
+  const commands=[
+    {icon:'⌁',name:'Open Verity blueprint',desc:'Inspect the multimodal agent architecture',keywords:'verity agent multimodal retrieval',run:()=>openBlueprint(0)},
+    {icon:'◈',name:'Open ApplyRight blueprint',desc:'Inspect recruitment and resume analysis',keywords:'applyright recruitment resume gemini',run:()=>openBlueprint(1)},
+    {icon:'⌘',name:'Open ParcelPilot blueprint',desc:'Inspect the evidence-first support agent',keywords:'parcelpilot support agent logistics',run:()=>openBlueprint(2)},
+    {icon:'▦',name:'Open LLM Evaluation blueprint',desc:'Inspect the evaluation and release flow',keywords:'evaluation llm signal lab',run:()=>openBlueprint(3)},
+    {icon:'▤',name:'Open CRM blueprint',desc:'Inspect the ticket management workflow',keywords:'crm ticket customer support',run:()=>openBlueprint(4)},
+    {icon:'⌂',name:'Open Kinder OS blueprint',desc:'Inspect the school platform',keywords:'kinder school education',run:()=>openBlueprint(5)},
+    {icon:'⌗',name:'Browse all repositories',desc:'Expand the complete 21-repository archive',keywords:'github repo repository archive',run:()=>{const a=document.querySelector('.archive');if(a){a.open=true;a.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}}},
+    {icon:'◉',name:'Switch to armor scan',desc:'Display the red-and-gold armor concept',keywords:'armor helmet iron man visual',run:()=>{setReactorMode('armor',true);document.getElementById('reactor')?.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}},
+    {icon:'◎',name:'Switch to arc reactor',desc:'Display the core assembly',keywords:'reactor core power',run:()=>{setReactorMode('reactor',true);document.getElementById('reactor')?.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}},
+    {icon:'✧',name:'Open J.A.R.V.I.S. schematic',desc:'Display the AI node map',keywords:'jarvis ai schematic map',run:()=>{setReactorMode('ai',true);document.getElementById('reactor')?.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}},
+    {icon:'▣',name:'Jump to experience',desc:'Internships and maintenance experience',keywords:'experience internship work',run:()=>document.getElementById('experience')?.scrollIntoView({behavior:reduce?'auto':'smooth'})},
+    {icon:'✉',name:'Contact Hemanth',desc:'Open email composition',keywords:'contact email message',run:()=>location.href='mailto:hemanthkumaryadav13@gmail.com'},
+    {icon:'↗',name:'Open GitHub profile',desc:'Explore source code and public projects',keywords:'github code profile',run:()=>window.open('https://github.com/hemanthkumar1012','_blank','noopener,noreferrer')},
+    {icon:'in',name:'Open LinkedIn profile',desc:'Professional profile',keywords:'linkedin social profile',run:()=>window.open('https://www.linkedin.com/in/v-hemanth-kumar-yadav/','_blank','noopener,noreferrer')}
+  ];
+  function renderCommands(query=''){
+    if(!commandList)return;
+    const q=query.trim().toLowerCase();
+    const filtered=commands.filter(c=>(c.name+' '+c.desc+' '+c.keywords).toLowerCase().includes(q));
+    commandList.innerHTML=filtered.length?filtered.map((c,i)=>'<button type="button" class="command-item'+(i===0?' selected':'')+'" role="option" aria-selected="'+(i===0?'true':'false')+'" data-command="'+commands.indexOf(c)+'"><span class="command-icon">'+c.icon+'</span><span><strong>'+c.name+'</strong><small>'+c.desc+'</small></span><kbd>'+(i===0?'ENTER':'↵')+'</kbd></button>').join(''):'<div class="command-item"><span class="command-icon">…</span><span><strong>No matching command</strong><small>Try “projects”, “armor”, “GitHub”, or “contact”.</small></span></div>';
+    commandList.querySelectorAll('[data-command]').forEach(button=>button.addEventListener('click',()=>{const c=commands[Number(button.dataset.command)];commandDialog?.close();c?.run()}));
+  }
+  function openCommandPalette(){if(!commandDialog)return;if(blueprintDialog?.open)blueprintDialog.close();commandDialog.showModal();if(commandInput){commandInput.value='';renderCommands('');setTimeout(()=>commandInput.focus(),40)}}
+  document.getElementById('commandTrigger')?.addEventListener('click',openCommandPalette);
+  commandInput?.addEventListener('input',()=>renderCommands(commandInput.value));
+  commandInput?.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();commandList?.querySelector('[data-command]')?.click()}if(event.key==='ArrowDown'){event.preventDefault();commandList?.querySelectorAll('[data-command]')[1]?.focus()}});
+  document.addEventListener('keydown',event=>{
+    const active=document.activeElement;
+    const typing=active&&(active.matches('input,textarea,select')||active.isContentEditable);
+    if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();openCommandPalette()}
+    else if(event.key==='Escape'){dismissBoot();[commandDialog,blueprintDialog].forEach(d=>{if(d?.open)d.close()})}
+    else if(event.key==='/'&&!typing&&!commandDialog?.open&&!blueprintDialog?.open){event.preventDefault();openCommandPalette()}
+  });
+  renderCommands();
+
+  // Fine-pointer cursor and card-local lighting.
+  const cursorOrb=document.getElementById('cursorOrb');
+  const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(cursorOrb&&finePointer&&!reduce){
+    document.body.classList.add('stark-cursor');let x=0,y=0,tx=-100,ty=-100;
+    addEventListener('pointermove',event=>{tx=event.clientX-19;ty=event.clientY-19},{passive:true});
+    function cursorLoop(){x+=(tx-x)*.2;y+=(ty-y)*.2;cursorOrb.style.transform='translate3d('+x+'px,'+y+'px,0)';requestAnimationFrame(cursorLoop)}cursorLoop();
+    document.querySelectorAll('a,button,.project,.cap-card,.experience-card').forEach(el=>{el.addEventListener('pointerenter',()=>cursorOrb.classList.add('hot'));el.addEventListener('pointerleave',()=>cursorOrb.classList.remove('hot'))});
+    document.querySelectorAll('.project').forEach(card=>card.addEventListener('pointermove',event=>{const r=card.getBoundingClientRect();card.style.setProperty('--px',((event.clientX-r.left)/r.width*100).toFixed(1)+'%');card.style.setProperty('--py',((event.clientY-r.top)/r.height*100).toFixed(1)+'%')}));
+  }
 })();
 </script>
 </body>
